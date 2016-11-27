@@ -1,0 +1,21 @@
+extends index.jade
+
+block meta
+
+block content
+  .choose-subject
+    h1.title Курсы
+    - var subtopics = ["Физика", "Химия", "Математика", "История искусства", "Музыка"];
+    - var specialty = ["Теория музыки", "История музыки", "Исполнение музыки"];
+
+    select.input(name="subtopic", size="1")
+      for stopic in subtopics
+        option
+          = stopic
+
+    select.input(name="specialty", size="1")
+      for spec in specialty
+        option
+          = spec
+
+    input.input.search(type="text" value="Поиск")

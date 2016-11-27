@@ -1,0 +1,109 @@
+@import url(reset.css);
+.page-header {
+  width: 100%;
+  height: 60px;
+  padding: 0 10%;
+  background-color: white;
+  margin-bottom: 330px;
+}
+.page-header > a > .logo {
+  height: 30px;
+  width: 112px;
+  margin: 15px 0;
+  float: left;
+}
+.page-header > a > .logo:hover {
+  fill: #ed4e42;
+}
+.page-header > .menu {
+  float: right;
+}
+.page-header > .menu > a {
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  display: inline-block;
+  padding: 0 10px;
+  line-height: 60px;
+  font-size: 16px;
+  font-weight: 400;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.page-header > .menu > a:after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: #ed4e42;
+  transform: scale(0);
+  opacity: 0;
+  will-change: opacity, transform;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.page-header > .menu > a:hover {
+  color: #ed4e42;
+}
+.page-header > .menu > a:hover:after {
+  transform: scale(1);
+  opacity: 1;
+}
+.page-header > .menu > a:not(:first-child) {
+  margin-left: 24px;
+}
+.page-header .cover {
+  width: calc(100vw - 14px);
+  margin-left: -10vw;
+  height: 330px;
+  z-index: 1;
+  background-image: url("../images/cover.jpg");
+}
+
+.page-content {
+  width: 80%;
+  height: 700px;
+  background-color: white;
+  margin: -120px auto 0 auto;
+  z-index: 10;
+  outline: 1px solid red;
+}
+
+.choose-subject {
+  padding: 20px 30px;
+}
+.choose-subject > .title {
+  font-size: 35px;
+  font-family: "Roboto", sans-serif;
+  margin-bottom: 25px;
+}
+.choose-subject > .input {
+  width: 31%;
+  height: 40px;
+  border: 1px solid gainsboro;
+  padding-left: 10px;
+}
+.choose-subject > .input + .input {
+  margin-left: 2.5%;
+}
+.choose-subject > .search {
+  position: relative;
+}
+.choose-subject > .search:after {
+  content: "";
+  background-image: url("../../images/search.png");
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.clearfix {
+  clear: both;
+}
+
+* {
+  box-sizing: border-box;
+}
