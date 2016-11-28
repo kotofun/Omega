@@ -1,28 +1,58 @@
 .choose-subject
-  padding: 20px 30px
 
   >.title
     font-size: 35px
     font-family: $font-roboto
     margin-bottom: 25px
 
-  >.input
+  >form
+    display: inline
+
+  >select
+    margin-right: 2.5%
+
+    >option
+      color: #000
+
+    >option[disabled]
+      display: none
+  
+  >select,
+  >form >input
     width: 31%
     height: 40px
     border: 1px solid $color-light-gray
     padding-left: 10px
 
-    & + .input
-      margin-left: 2.5%
-  
-  >.search
-    position: relative
     
-    &:after
-      content: ""
-      background-image: url("../../images/search.png")
-      width: 10px
-      height: 10px
-      position: absolute
-      top: 0
-      left: 0
+  & .search
+    background-color: transparent
+    width: 40px
+    height: 40px
+    margin: 0 -45px -5px
+    border: none
+    padding: 5px
+    position: relative
+    top: 10px
+    cursor: pointer
+
+    >.loupe
+      width: 30px
+      height: 30px
+      fill: $color-gray
+
+    &:hover >.loupe
+      fill: #000
+
+  >.sort
+    width: 100%
+    margin-top: 25px
+    font-size: 12px
+
+    >span
+      color: $color-dark-gray
+
+    >.tinyinput
+      width: 130px
+      height: 20px
+      border: none

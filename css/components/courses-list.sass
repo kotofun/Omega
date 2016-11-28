@@ -1,0 +1,35 @@
+.courses-list
+  width: 100%
+  padding-top: 30px
+
+  >.course
+    display: block
+    width: 60%
+    border-top: 1px solid $color-light-gray
+    padding: 13px 0
+
+    &:last-child
+      border-bottom: 1px solid $color-light-gray
+  
+  >.course >.title
+    color: $color-red
+    font-size: 17px
+    display: block
+
+    &:hover
+      color: $color-dark-red
+
+  >.course >.lecturer
+    color: $color-dark-gray
+    font-size: 15px
+
+    &:hover
+      color: #000
+
+  >.showmore
+    width: 60%
+    height: 40px
+    background-color: $color-light-gray
+    cursor: pointer
+    border: none
+    margin-top: 20px

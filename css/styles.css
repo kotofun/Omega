@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(reset.css);
 .page-header {
   width: 100%;
@@ -63,41 +64,104 @@
 
 .page-content {
   width: 80%;
-  height: 700px;
   background-color: white;
   margin: -120px auto 0 auto;
   z-index: 10;
-  outline: 1px solid red;
+  padding: 20px 30px 120px;
 }
 
-.choose-subject {
-  padding: 20px 30px;
-}
 .choose-subject > .title {
   font-size: 35px;
   font-family: "Roboto", sans-serif;
   margin-bottom: 25px;
 }
-.choose-subject > .input {
+.choose-subject > form {
+  display: inline;
+}
+.choose-subject > select {
+  margin-right: 2.5%;
+}
+.choose-subject > select > option {
+  color: black;
+}
+.choose-subject > select > option[disabled] {
+  display: none;
+}
+.choose-subject > select,
+.choose-subject > form > input {
   width: 31%;
   height: 40px;
   border: 1px solid gainsboro;
   padding-left: 10px;
 }
-.choose-subject > .input + .input {
-  margin-left: 2.5%;
-}
-.choose-subject > .search {
+.choose-subject .search {
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  margin: 0 -45px -5px;
+  border: none;
+  padding: 5px;
   position: relative;
+  top: 10px;
+  cursor: pointer;
 }
-.choose-subject > .search:after {
-  content: "";
-  background-image: url("../../images/search.png");
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  top: 0;
-  left: 0;
+.choose-subject .search > .loupe {
+  width: 30px;
+  height: 30px;
+  fill: #c8c8c8;
+}
+.choose-subject .search:hover > .loupe {
+  fill: black;
+}
+.choose-subject > .sort {
+  width: 100%;
+  margin-top: 25px;
+  font-size: 12px;
+}
+.choose-subject > .sort > span {
+  color: #666666;
+}
+.choose-subject > .sort > .tinyinput {
+  width: 130px;
+  height: 20px;
+  border: none;
+}
+
+.courses-list {
+  width: 100%;
+  padding-top: 30px;
+}
+.courses-list > .course {
+  display: block;
+  width: 60%;
+  border-top: 1px solid gainsboro;
+  padding: 13px 0;
+}
+.courses-list > .course:last-child {
+  border-bottom: 1px solid gainsboro;
+}
+.courses-list > .course > .title {
+  color: #ed4e42;
+  font-size: 17px;
+  display: block;
+}
+.courses-list > .course > .title:hover {
+  color: #983233;
+}
+.courses-list > .course > .lecturer {
+  color: #666666;
+  font-size: 15px;
+}
+.courses-list > .course > .lecturer:hover {
+  color: black;
+}
+.courses-list > .showmore {
+  width: 60%;
+  height: 40px;
+  background-color: gainsboro;
+  cursor: pointer;
+  border: none;
+  margin-top: 20px;
 }
 
 .clearfix {
@@ -106,4 +170,47 @@
 
 * {
   box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: black;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"] + label {
+  cursor: pointer;
+  position: relative;
+  margin-left: 45px;
+}
+input[type="checkbox"] + label::before {
+  content: " ";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 1px solid gainsboro;
+  font-size: 14px;
+  text-align: center;
+  line-height: 14px;
+  position: absolute;
+  top: -2px;
+  left: -25px;
+  box-sizing: border-box;
+  color: white;
+}
+input[type="checkbox"]:checked + label::before {
+  content: "✓";
+  padding-left: 2px;
+  background-color: #ed4e42;
+  border-color: #ed4e42;
 }

@@ -16,7 +16,18 @@
     <div class="page-content">
       <div class="choose-subject">
         <h1 class="title">Курсы</h1>
-        <select name="subtopic" size="1" class="input">
+        <!--  
+        - var courses = [
+          {
+            lecturer: "Кевин Колтер",
+            date: 1480288644,
+            title: "Mechanics of Material Systems"
+          }
+        ];
+        
+        -->
+        <select name="subtopic" size="1" autocomplete="off">
+          <option value="" disabled="disabled" selected="selected">Предмет</option>
           <option>Физика
           </option>
           <option>Химия
@@ -28,7 +39,8 @@
           <option>Музыка
           </option>
         </select>
-        <select name="specialty" size="1" class="input">
+        <select name="specialty" size="1" autocomplete="off">
+          <option value="" disabled="disabled" selected="selected">Направление</option>
           <option>Теория музыки
           </option>
           <option>История музыки
@@ -36,7 +48,39 @@
           <option>Исполнение музыки
           </option>
         </select>
-        <input type="text" value="Поиск" class="input search"/>
+        <form>
+          <input type="text" placeholder="Поиск"/>
+          <button type="submit" class="search">
+            <svg role="img" title="loupe" class="loupe">
+              <use xlink:href="images/loupe.svg#loupe"></use>
+            </svg>
+          </button>
+        </form>
+        <div class="sort"><span>Сортировать по:</span>
+          <select class="tinyinput">
+            <option>Названию</option>
+            <option>Дате добавления</option>
+            <option>Имени лектора</option>
+          </select>
+          <input type="checkbox" id="contains" hidden="hidden"/>
+          <label for="contains">Содержит…</label>
+        </div>
+      </div>
+      <div class="courses-list">
+        <!-- Мой компилятор Pug не может компилировать большие массивы с объектами-->
+        <!-- поэтому выше он закомментирован и использован обычный цикл-->
+        <div class="course"><a href="https://www.kursomir.ru" class="title">Mechanics of Material Systems </a><a href="https://www.kursomir.ru" class="lecturer">Кевин Колтер</a></div>
+        <div class="course"><a href="https://www.kursomir.ru" class="title">Mechanics of Material Systems </a><a href="https://www.kursomir.ru" class="lecturer">Кевин Колтер</a></div>
+        <div class="course"><a href="https://www.kursomir.ru" class="title">Mechanics of Material Systems </a><a href="https://www.kursomir.ru" class="lecturer">Кевин Колтер</a></div>
+        <div class="course"><a href="https://www.kursomir.ru" class="title">Mechanics of Material Systems </a><a href="https://www.kursomir.ru" class="lecturer">Кевин Колтер</a></div>
+        <div class="course"><a href="https://www.kursomir.ru" class="title">Mechanics of Material Systems </a><a href="https://www.kursomir.ru" class="lecturer">Кевин Колтер</a></div>
+        <div class="course"><a href="https://www.kursomir.ru" class="title">Mechanics of Material Systems </a><a href="https://www.kursomir.ru" class="lecturer">Кевин Колтер</a></div>
+        <div class="course"><a href="https://www.kursomir.ru" class="title">Mechanics of Material Systems </a><a href="https://www.kursomir.ru" class="lecturer">Кевин Колтер</a></div>
+        <div class="course"><a href="https://www.kursomir.ru" class="title">Mechanics of Material Systems </a><a href="https://www.kursomir.ru" class="lecturer">Кевин Колтер</a></div>
+        <div class="course"><a href="https://www.kursomir.ru" class="title">Mechanics of Material Systems </a><a href="https://www.kursomir.ru" class="lecturer">Кевин Колтер</a></div>
+        <div class="course"><a href="https://www.kursomir.ru" class="title">Mechanics of Material Systems </a><a href="https://www.kursomir.ru" class="lecturer">Кевин Колтер</a></div>
+        <div class="course"><a href="https://www.kursomir.ru" class="title">Mechanics of Material Systems </a><a href="https://www.kursomir.ru" class="lecturer">Кевин Колтер</a></div>
+        <button class="showmore">Показать еще 50</button>
       </div>
     </div>
   </body>
