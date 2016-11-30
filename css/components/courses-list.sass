@@ -5,25 +5,25 @@
   >.course
     display: block
     width: 60%
-    border-top: 1px solid $color-light-gray
+    border: 1px solid $color-light-gray
     padding: 13px 0
 
-    &:last-child
+    &:last-of-type
       border-bottom: 1px solid $color-light-gray
   
-  >.course >.title
-    color: $color-red
-    font-size: 17px
-    display: block
+    >.title
+      color: $color-red
+      font-size: 17px
+      display: block
 
-    &:hover
+    >.title:hover
       color: $color-dark-red
 
-  >.course >.lecturer
-    color: $color-dark-gray
-    font-size: 15px
+    >.lecturer
+      color: $color-dark-gray
+      font-size: 15px
 
-    &:hover
+    >.lecturer:hover
       color: #000
 
   >.showmore
@@ -33,3 +33,6 @@
     cursor: pointer
     border: none
     margin-top: 20px
+
+    &:hover
+      background-color: $color-gray

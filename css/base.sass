@@ -1,0 +1,105 @@
+.clearfix
+  clear: both
+
+*
+  box-sizing: border-box
+
+body
+  font-family: Arial, $font-roboto
+  color: $color-dark-gray
+
+a
+  color: $color-red
+
+  &:hover
+    color: $color-dark-red
+
+  &.-linkback
+    position: relative
+    margin-left: 15px
+
+    & + h1
+      margin: 10px 0 36px 0
+
+    &::before
+      content: ""
+      display: block
+      width: 7px
+      height: 7px
+      transform: rotate(45deg)
+      background-color: transparent
+      border: 1px solid $color-red
+      border-top: none
+      border-right: none
+      position: absolute
+      top: 5px
+      left: -12px
+
+    &:hover::before
+      border-color: $color-dark-red
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+  color: $color-almost-black
+  font-family: $font-roboto
+
+h1
+  font-size: 35px
+  margin-bottom: 15px
+
+h3
+  font-size: 16px
+
+.button
+  display: block
+  height: 40px
+  border: none
+  line-height: 40px
+  text-align: center
+  margin-top: 20px
+  font-size: 14px
+  cursor: pointer
+
+  &:hover
+    filter: brightness(.85)
+
+  &.-red
+    background-color: $color-red
+    color: #fff
+
+  &.-gray
+    background-color: $color-gray
+    color: $color-almost-black
+
+input[type="checkbox"]
+  display: none
+
+  & + label
+    cursor: pointer
+    position: relative
+    margin-left: 45px
+
+  & + label::before
+    content: " "
+    display: inline-block
+    width: 18px
+    height: 18px
+    border: 1px solid $color-light-gray
+    font-size: 14px
+    text-align: center
+    line-height: 14px
+    position: absolute
+    top: -2px
+    left: -25px
+    box-sizing: border-box
+    color: #fff
+
+  &:checked + label::before
+    content: "✓"
+    padding-left: 2px
+    background-color: $color-red
+    border-color: $color-red

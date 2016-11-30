@@ -1,20 +1,22 @@
 extends index.jade
 
 block meta
-
+  title Курсы
+  
 block content
+  - var subtopics = ["Физика", "Химия", "Математика", "История искусства", "Музыка"];
+  - var specialty = ["Теория музыки", "История музыки", "Исполнение музыки"];
+  //  
+    - var courses = [
+      {
+        lecturer: "Кевин Колтер",
+        date: 1480288644,
+        title: "Mechanics of Material Systems"
+      }
+    ];
+
   .choose-subject
-    h1.title Курсы
-    - var subtopics = ["Физика", "Химия", "Математика", "История искусства", "Музыка"];
-    - var specialty = ["Теория музыки", "История музыки", "Исполнение музыки"];
-    //  
-      - var courses = [
-        {
-          lecturer: "Кевин Колтер",
-          date: 1480288644,
-          title: "Mechanics of Material Systems"
-        }
-      ];
+    h1 Курсы
 
     select(name="subtopic", size="1", autocomplete="off")
       option(value="", disabled, selected) Предмет

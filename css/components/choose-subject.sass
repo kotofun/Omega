@@ -1,18 +1,19 @@
 .choose-subject
 
-  >.title
-    font-size: 35px
-    font-family: $font-roboto
-    margin-bottom: 25px
-
   >form
     display: inline
 
   >select
     margin-right: 2.5%
 
+    &:focus
+      border-color: $color-red
+
     >option
       color: #000
+      height: 40px
+      line-height: 40px
+      padding: 10px
 
     >option[disabled]
       display: none

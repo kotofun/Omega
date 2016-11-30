@@ -1,53 +1,11 @@
 @import 'reset.css'
 @import 'variables.sass'
+@import 'base.sass'
 @import 'components/page-header.sass'
 @import 'components/page-content.sass'
 @import 'components/choose-subject.sass'
 @import 'components/courses-list.sass'
-
-.clearfix
-  clear: both
-
-*
-  box-sizing: border-box
-
-body
-  font-family: Arial, $font-roboto
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6
-  color: #000
-
-// Кастомизация чекбоксов
-input[type="checkbox"]
-  display: none
-
-  & + label
-    cursor: pointer
-    position: relative
-    margin-left: 45px
-
-  & + label::before
-    content: " "
-    display: inline-block
-    width: 18px
-    height: 18px
-    border: 1px solid $color-light-gray
-    font-size: 14px
-    text-align: center
-    line-height: 14px
-    position: absolute
-    top: -2px
-    left: -25px
-    box-sizing: border-box
-    color: #fff
-
-  &:checked + label::before
-    content: "✓"
-    padding-left: 2px
-    background-color: $color-red
-    border-color: $color-red
+@import 'components/course-desc.sass'
+@import 'components/course-sidebar.sass'
+@import 'components/lectures-list.sass'
+@import 'components/social-icons.sass'
