@@ -4,7 +4,7 @@ html
     meta(charset="UTF8")
     link(rel="stylesheet", href="css/styles.css")
   body
-    .page-header
+    .site-header
       a(href="https://www.kursomir.ru")
         svg.logo(role="img", title="logo")
           use(xlink:href="images/icons.svg#logo")
@@ -16,5 +16,11 @@ html
       .clearfix
       .cover
 
-    .page-content
-      block content
+    .page-wrap
+      .head
+        block head
+      .sidebar
+        block sidebar
+      .content
+        block content
+      .clearfix

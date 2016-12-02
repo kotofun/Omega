@@ -14,29 +14,41 @@ a
   &:hover
     color: $color-dark-red
 
-  &.-linkback
+  &.-linkback,
+  &.-linkforward
     position: relative
-    margin-left: 15px
-
-    & + h1
-      margin: 10px 0 36px 0
-
-    &::before
-      content: ""
-      display: block
-      width: 7px
-      height: 7px
-      transform: rotate(45deg)
-      background-color: transparent
-      border: 1px solid $color-red
-      border-top: none
-      border-right: none
-      position: absolute
-      top: 5px
-      left: -12px
-
+    
     &:hover::before
       border-color: $color-dark-red
+
+  &.-linkback
+    margin-left: 15px
+
+  &.-linkforward
+    margin-right: 15px
+    float: right
+
+  &.-linkback::before,
+  &.-linkforward::after
+    content: ""
+    display: block
+    width: 7px
+    height: 7px
+    background-color: transparent
+    border: 1px solid $color-red
+    border-top: none
+    border-right: none
+    position: absolute
+
+  &.-linkback::before
+    top: 5px
+    left: -12px
+    transform: rotate(45deg)
+
+  &.-linkforward::after
+    top: 5px
+    right: -12px
+    transform: rotate(-135deg)
 
 h1,
 h2,
@@ -51,18 +63,21 @@ h1
   font-size: 35px
   margin-bottom: 15px
 
+h2
+  font-size: 22px
+
 h3
   font-size: 16px
 
 .button
-  display: block
-  height: 40px
+  display: inline-block
+  height: 35px
   border: none
-  line-height: 40px
+  line-height: 35px
   text-align: center
-  margin-top: 20px
   font-size: 14px
   cursor: pointer
+  padding: 0 30px
 
   &:hover
     filter: brightness(.85)
@@ -74,6 +89,11 @@ h3
   &.-gray
     background-color: $color-gray
     color: $color-almost-black
+
+  &.-block
+    display: block
+    margin-top: 20px
+
 
 input[type="checkbox"]
   display: none

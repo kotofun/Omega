@@ -1,20 +1,21 @@
 extends index.jade
 
+//  
+  - var courses = [
+    {
+      lecturer: "Кевин Колтер",
+      date: 1480288644,
+      title: "Mechanics of Material Systems"
+    }
+  ];
+
 block meta
   title Курсы
-  
-block content
+
+block head
   - var subtopics = ["Физика", "Химия", "Математика", "История искусства", "Музыка"];
   - var specialty = ["Теория музыки", "История музыки", "Исполнение музыки"];
-  //  
-    - var courses = [
-      {
-        lecturer: "Кевин Колтер",
-        date: 1480288644,
-        title: "Mechanics of Material Systems"
-      }
-    ];
-
+  
   .choose-subject
     h1 Курсы
 
@@ -47,6 +48,8 @@ block content
       
       input(type="checkbox" id="contains" hidden)
       label(for="contains") Содержит…
+  
+block content
 
   .courses-list
     // Мой компилятор Pug не может компилировать большие массивы с объектами

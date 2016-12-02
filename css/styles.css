@@ -19,29 +19,39 @@ a {
 a:hover {
   color: #983233;
 }
-a.-linkback {
+a.-linkback, a.-linkforward {
   position: relative;
+}
+a.-linkback:hover::before, a.-linkforward:hover::before {
+  border-color: #983233;
+}
+a.-linkback {
   margin-left: 15px;
 }
-a.-linkback + h1 {
-  margin: 10px 0 36px 0;
+a.-linkforward {
+  margin-right: 15px;
+  float: right;
 }
-a.-linkback::before {
+a.-linkback::before, a.-linkforward::after {
   content: "";
   display: block;
   width: 7px;
   height: 7px;
-  transform: rotate(45deg);
   background-color: transparent;
   border: 1px solid #ed4e42;
   border-top: none;
   border-right: none;
   position: absolute;
+}
+a.-linkback::before {
   top: 5px;
   left: -12px;
+  transform: rotate(45deg);
 }
-a.-linkback:hover::before {
-  border-color: #983233;
+a.-linkforward::after {
+  top: 5px;
+  right: -12px;
+  transform: rotate(-135deg);
 }
 
 h1,
@@ -59,19 +69,23 @@ h1 {
   margin-bottom: 15px;
 }
 
+h2 {
+  font-size: 22px;
+}
+
 h3 {
   font-size: 16px;
 }
 
 .button {
-  display: block;
-  height: 40px;
+  display: inline-block;
+  height: 35px;
   border: none;
-  line-height: 40px;
+  line-height: 35px;
   text-align: center;
-  margin-top: 20px;
   font-size: 14px;
   cursor: pointer;
+  padding: 0 30px;
 }
 .button:hover {
   filter: brightness(0.85);
@@ -83,6 +97,10 @@ h3 {
 .button.-gray {
   background-color: #c8c8c8;
   color: #222222;
+}
+.button.-block {
+  display: block;
+  margin-top: 20px;
 }
 
 input[type="checkbox"] {
@@ -115,26 +133,26 @@ input[type="checkbox"]:checked + label::before {
   border-color: #ed4e42;
 }
 
-.page-header {
+.site-header {
   width: 100%;
   height: 60px;
   padding: 0 10%;
   background-color: white;
   margin-bottom: 330px;
 }
-.page-header > a > .logo {
+.site-header > a > .logo {
   height: 30px;
   width: 112px;
   margin: 15px 0;
   float: left;
 }
-.page-header > a > .logo:hover {
+.site-header > a > .logo:hover {
   fill: #ed4e42;
 }
-.page-header > .menu {
+.site-header > .menu {
   float: right;
 }
-.page-header > .menu > a {
+.site-header > .menu > a {
   font-family: "Roboto", sans-serif;
   position: relative;
   display: inline-block;
@@ -146,7 +164,7 @@ input[type="checkbox"]:checked + label::before {
   text-decoration: none;
   cursor: pointer;
 }
-.page-header > .menu > a:after {
+.site-header > .menu > a:after {
   content: "";
   position: absolute;
   height: 3px;
@@ -159,17 +177,17 @@ input[type="checkbox"]:checked + label::before {
   will-change: opacity, transform;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
-.page-header > .menu > a:hover {
+.site-header > .menu > a:hover {
   color: #ed4e42;
 }
-.page-header > .menu > a:hover:after {
+.site-header > .menu > a:hover:after {
   transform: scale(1);
   opacity: 1;
 }
-.page-header > .menu > a:not(:first-child) {
+.site-header > .menu > a:not(:first-child) {
   margin-left: 24px;
 }
-.page-header .cover {
+.site-header .cover {
   width: 100%;
   position: absolute;
   margin-left: -10vw;
@@ -178,12 +196,27 @@ input[type="checkbox"]:checked + label::before {
   background-image: url("../images/cover.jpg");
 }
 
-.page-content {
+.page-wrap {
   width: 80%;
   background-color: white;
-  margin: -120px auto 0 auto;
+  margin: -125px auto 0 auto;
   z-index: 10;
   padding: 20px 30px 120px;
+}
+.page-wrap > .head {
+  width: 100%;
+  margin-bottom: 45px;
+}
+.page-wrap > .head > .title {
+  margin-top: 5px;
+}
+.page-wrap > .content {
+  float: left;
+  width: 70%;
+}
+.page-wrap > .sidebar {
+  float: right;
+  width: 25%;
 }
 
 .choose-subject > form {
@@ -246,12 +279,11 @@ input[type="checkbox"]:checked + label::before {
 
 .courses-list {
   width: 100%;
-  padding-top: 30px;
 }
 .courses-list > .course {
   display: block;
-  width: 60%;
-  border: 1px solid gainsboro;
+  width: 100%;
+  border-top: 1px solid gainsboro;
   padding: 13px 0;
 }
 .courses-list > .course:last-of-type {
@@ -284,15 +316,10 @@ input[type="checkbox"]:checked + label::before {
   background-color: #c8c8c8;
 }
 
-.course-desc > .desc {
-  width: 70%;
-  float: left;
+.page-head > .title {
+  margin-top: 5px;
 }
 
-.course-sidebar {
-  width: 25%;
-  float: right;
-}
 .course-sidebar > .info {
   margin-top: 15px;
   font-size: 14px;
@@ -308,8 +335,6 @@ input[type="checkbox"]:checked + label::before {
 
 .lectures-list {
   margin-top: 50px;
-  float: left;
-  width: 70%;
   counter-reset: item;
 }
 .lectures-list > h3 {
@@ -318,10 +343,8 @@ input[type="checkbox"]:checked + label::before {
 .lectures-list > li {
   display: block;
   width: 100%;
-  height: 55px;
   border-top: 1px solid #c8c8c8;
-  line-height: 55px;
-  padding-left: 30px;
+  padding: 20px 0 20px 30px;
   color: #ed4e42;
   position: relative;
 }
@@ -334,6 +357,12 @@ input[type="checkbox"]:checked + label::before {
   color: #666666;
   position: absolute;
   left: 0;
+}
+.lectures-list.-tiny {
+  margin-top: 0;
+}
+.lectures-list.-tiny > li {
+  padding: 10px 0 10px 30px;
 }
 
 .social-icons {
@@ -385,4 +414,27 @@ input[type="checkbox"]:checked + label::before {
 .social-icons > .vk > svg {
   width: 15px;
   height: 20px;
+}
+
+.lection-text > p {
+  text-indent: 15px;
+  margin-bottom: 5px;
+  color: #373737;
+}
+.lection-text > h2 {
+  margin: 30px 0 15px 0;
+}
+.lection-text > h2:first-of-type {
+  margin-top: 0;
+}
+.lection-text > .image {
+  max-width: 100%;
+  margin: 20px 0 5px 0;
+}
+.lection-text > .imagedesc {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.lection-text > a.-linkforward {
+  margin-top: 40px;
 }
