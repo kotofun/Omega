@@ -1,0 +1,61 @@
+extends index.jade
+
+block meta
+  title Астрономия. Вводный курс
+
+block head
+  a(href="https://www.kursomir.ru").-linkback Астрономия
+  h1.title Астрономия. Вводный курс
+
+block sidebar
+  .course-sidebar
+    h3 Информация о курсе:
+    p.info Преподаватель:
+      span.colorblack Эммет Браун
+    p.info Номер курса MIT:
+      span.colorblack 6,003
+    p.info Дата появления курса:
+      span.colorblack Осень 2011
+    p.info Уровень сложности:
+      span.colorblack Студент
+
+    .social-icons
+      a(href="https://www.kursomir.ru").twitter
+        svg(role="img", title="logo")
+          use(xlink:href="images/icons.svg#twitter")
+      a(href="https://www.kursomir.ru").telegram
+        svg(role="img", title="logo")
+          use(xlink:href="images/icons.svg#telegram")
+      a(href="https://www.kursomir.ru").vk
+        svg(role="img", title="logo")
+          use(xlink:href="images/icons.svg#vk")
+    
+    h3 Над курсом работали:
+    p.info Редактор:
+      span.colorblack Ирина Романова
+    p.info Переводчики:
+      span.colorblack Иван Алексеев
+      span.colorblack Валерий Суханов
+      span.colorblack Ярослав Некрасов
+    p.info Верстальщик:
+      span.colorblack Александр Андреев
+    
+    a.button.-red.-block Скачать курс в PDF
+    a.button.-gray.-block Задачи и решения
+  
+block content
+  - var lectures =  ["Астрономы и объекты их интереса", "Телескопы", "Измерение пространства и времени", "Движение и гравитация", "Планетные системы", "Малые тела", "Звезды", "Галактика", "Космология"];
+
+  .page-content
+    .desc
+      p Вводный курс по астрономии приводит знания о космических явлениях в стройную систему, а также знакомит слушателей с современными исследованиями и важнейшими открытиями ученых. 
+      br 
+      Профессиональных астрономов в мире совсем немного — около 15 тысяч человек, объединенных Международным астрономическим союзом. Но сотни тысяч любителей с не меньшим увлечением наблюдают и изучают космические объекты. Любознательность по отношению к механизмам Вселенной, как правило, воспитывается в юном возрасте. Поэтому сегодня астрономии совершенно справедливо отводится время во многих школах и кружках. Но везде ли эти уроки достаточно эффективны?
+
+  ul.lectures-list
+    h3 Лекции:
+    for lect in lectures
+      li 
+        a(href="https://www.kursomir.ru")= lect
+        
+  .clearfix

@@ -1,21 +1,63 @@
 extends index.jade
 
+//  
+  - var courses = [
+    {
+      lecturer: "Кевин Колтер",
+      date: 1480288644,
+      title: "Mechanics of Material Systems"
+    }
+  ];
+
 block meta
+  title Курсы
 
-block content
+block head
+  - var subtopics = ["Физика", "Химия", "Математика", "История искусства", "Музыка"];
+  - var specialty = ["Теория музыки", "История музыки", "Исполнение музыки"];
+  
   .choose-subject
-    h1.title Курсы
-    - var subtopics = ["Физика", "Химия", "Математика", "История искусства", "Музыка"];
-    - var specialty = ["Теория музыки", "История музыки", "Исполнение музыки"];
+    h1 Курсы
 
-    select.input(name="subtopic", size="1")
+    select(name="subtopic", size="1", autocomplete="off")
+      option(value="", disabled, selected) Предмет
       for stopic in subtopics
         option
           = stopic
 
-    select.input(name="specialty", size="1")
+    select(name="specialty", size="1", autocomplete="off")
+      option(value="", disabled, selected) Направление
       for spec in specialty
-        option
+        option 
           = spec
 
-    input.input.search(type="text" value="Поиск")
+
+    form
+      input(type="text" placeholder="Поиск")
+      button(type="submit").search
+        svg.loupe(role="img", title="loupe")
+            use(xlink:href="images/loupe.svg#loupe")
+      
+    .sort
+      span Сортировать по:
+
+      select.tinyinput
+        option Названию
+        option Дате добавления
+        option Имени лектора
+      
+      input(type="checkbox" id="contains" hidden)
+      label(for="contains") Содержит…
+  
+block content
+
+  .courses-list
+    // Мой компилятор Pug не может компилировать большие массивы с объектами
+    // поэтому выше он закомментирован и использован обычный цикл
+
+    - for (var i=0; i<=10; i++)
+      .course
+        a(href="https://www.kursomir.ru").title Mechanics of Material Systems 
+        a(href="https://www.kursomir.ru").lecturer Кевин Колтер
+
+    button.showmore Показать еще 50
