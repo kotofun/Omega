@@ -63,6 +63,14 @@ h6 {
   color: #222222;
   font-family: "Roboto", sans-serif;
 }
+h1.-mt40,
+h2.-mt40,
+h3.-mt40,
+h4.-mt40,
+h5.-mt40,
+h6.-mt40 {
+  margin-top: 40px;
+}
 
 h1 {
   font-size: 35px;
@@ -75,6 +83,7 @@ h2 {
 
 h3 {
   font-size: 16px;
+  margin-bottom: 10px;
 }
 
 .button {
@@ -100,6 +109,8 @@ h3 {
 }
 .button.-block {
   display: block;
+}
+.button.-mt20 {
   margin-top: 20px;
 }
 
@@ -110,6 +121,7 @@ input[type="checkbox"] + label {
   cursor: pointer;
   position: relative;
   margin-left: 45px;
+  font-size: 14px;
 }
 input[type="checkbox"] + label::before {
   content: " ";
@@ -121,7 +133,6 @@ input[type="checkbox"] + label::before {
   text-align: center;
   line-height: 14px;
   position: absolute;
-  top: -2px;
   left: -25px;
   box-sizing: border-box;
   color: white;
@@ -131,6 +142,75 @@ input[type="checkbox"]:checked + label::before {
   padding-left: 2px;
   background-color: #ed4e42;
   border-color: #ed4e42;
+}
+
+.radio {
+  margin: 15px 0;
+}
+.radio > .subradio {
+  height: 0;
+  display: none;
+  padding-left: 20px;
+}
+.radio > .subradio > .seclevel {
+  margin: 15px 0;
+  line-height: 16px;
+}
+.radio > input[type="radio"] {
+  display: none;
+}
+.radio > input[type="radio"] + label {
+  cursor: pointer;
+  position: relative;
+  margin-left: 45px;
+}
+.radio > input[type="radio"] + label::before {
+  content: " ";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid gainsboro;
+  font-size: 14px;
+  text-align: center;
+  line-height: 14px;
+  position: absolute;
+  left: -25px;
+  box-sizing: border-box;
+  color: white;
+}
+.radio > input[type="radio"]:checked + label::before {
+  content: "●";
+  background-color: #ed4e42;
+  border-color: #ed4e42;
+}
+.radio > input[type="radio"]:checked ~ .subradio {
+  height: auto;
+  display: block;
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 31%;
+  height: 40px;
+  border: 1px solid gainsboro;
+  padding-left: 10px;
+}
+input[type="text"].-block,
+select.-block,
+textarea.-block {
+  display: block;
+  width: 300px;
+  margin: 15px 0;
+}
+
+textarea {
+  width: 100%;
+  max-width: 100%;
+  min-size: 100%;
+  min-height: 70px;
+  padding: 10px;
 }
 
 .site-header {
@@ -193,7 +273,12 @@ input[type="checkbox"]:checked + label::before {
   margin-left: -10vw;
   height: 330px;
   z-index: -1;
-  background-image: url("../images/cover.jpg");
+  overflow: hidden;
+}
+.site-header .cover > .robot {
+  width: 100%;
+  height: 100%;
+  background: no-repeat #ed4e42 50% 20% url("../images/robot.png");
 }
 
 .page-wrap {
@@ -203,9 +288,15 @@ input[type="checkbox"]:checked + label::before {
   z-index: 10;
   padding: 20px 30px 120px;
 }
+.page-wrap.-tiny {
+  width: 60%;
+}
 .page-wrap > .head {
   width: 100%;
   margin-bottom: 45px;
+}
+.page-wrap > .head.-tiny {
+  margin-bottom: 15px;
 }
 .page-wrap > .head > .title {
   margin-top: 5px;
@@ -236,13 +327,6 @@ input[type="checkbox"]:checked + label::before {
 }
 .choose-subject > select > option[disabled] {
   display: none;
-}
-.choose-subject > select,
-.choose-subject > form > input {
-  width: 31%;
-  height: 40px;
-  border: 1px solid gainsboro;
-  padding-left: 10px;
 }
 .choose-subject .search {
   background-color: transparent;
@@ -378,9 +462,24 @@ input[type="checkbox"]:checked + label::before {
   text-align: center;
   padding-top: 12.5px;
   margin-right: 10px;
+  position: relative;
 }
 .social-icons > a > svg {
   fill: white;
+}
+.social-icons.-auth > a.-authed::after {
+  content: "✓";
+  color: white;
+  font-size: 11px;
+  line-height: 15px;
+  width: 15px;
+  height: 15px;
+  background-color: #71c837;
+  position: absolute;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 50%;
+  border: 3px solid white;
 }
 .social-icons > .twitter {
   background-color: #55acee;

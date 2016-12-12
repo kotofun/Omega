@@ -1,0 +1,65 @@
+extends index.jade
+
+block meta
+  title Хочу помочь
+
+block cover
+  .robot
+
+block page-wrap
+  .page-wrap.-tiny
+    .content
+      h3 Хочу помочь:
+      .radio
+        input(type="radio" name="what-ican" id="translate" hidden)
+        label(for="translate") Переводить
+        .subradio
+          .seclevel
+            input(type="checkbox" id="dir1" hidden)
+            label(for="dir1") Направление
+          .seclevel
+            input(type="checkbox" id="dir2" hidden)
+            label(for="dir2") Направление
+          .seclevel
+            input(type="checkbox" id="dir3" hidden)
+            label(for="dir3") Направление
+          .seclevel
+            input(type="checkbox" id="dir4" hidden)
+            label(for="dir4") Направление
+      .radio
+        input(type="radio" name="what-ican" id="edit" hidden)
+        label(for="edit") Редактировать
+      .radio
+        input(type="radio" name="what-ican" id="latex" hidden)
+        label(for="latex") Верстать в LaTeX
+      .radio
+        input(type="radio" name="what-ican" id="video" hidden)
+        label(for="video") Заниматься видеомонтажом
+      .radio
+        input(type="radio" name="what-ican" id="dev" hidden)
+        label(for="dev") Заниматься разработкой
+      .radio
+        input(type="radio" name="what-ican" id="design" hidden)
+        label(for="design") Заниматься дизайном
+
+      h3.-mt40 Со мной можно связаться:
+      .social-icons.-auth
+        a(href="https://www.kursomir.ru").twitter.-authed
+          svg(role="img", title="logo")
+            use(xlink:href="images/icons.svg#twitter")
+        a(href="https://www.kursomir.ru").telegram
+          svg(role="img", title="logo")
+            use(xlink:href="images/icons.svg#telegram")
+        a(href="https://www.kursomir.ru").vk
+          svg(role="img", title="logo")
+            use(xlink:href="images/icons.svg#vk")
+
+      h3.-mt40 Дополнительные контакты:
+      input(placeholder="E-mail" name="email" type="text").-block
+      input(placeholder="Telegram" name="telegram" type="text").-block
+
+      h3.-mt40 Комментарий:
+      textarea
+      .button.-red.-mt20 Регистрация
+
+    .clearfix

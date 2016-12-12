@@ -59,6 +59,9 @@ h6
   color: $color-almost-black
   font-family: $font-roboto
 
+  &.-mt40
+    margin-top: 40px
+
 h1
   font-size: 35px
   margin-bottom: 15px
@@ -68,6 +71,7 @@ h2
 
 h3
   font-size: 16px
+  margin-bottom: 10px
 
 .button
   display: inline-block
@@ -92,6 +96,8 @@ h3
 
   &.-block
     display: block
+
+  &.-mt20
     margin-top: 20px
 
 
@@ -102,6 +108,7 @@ input[type="checkbox"]
     cursor: pointer
     position: relative
     margin-left: 45px
+    font-size: 14px
 
   & + label::before
     content: " "
@@ -113,7 +120,6 @@ input[type="checkbox"]
     text-align: center
     line-height: 14px
     position: absolute
-    top: -2px
     left: -25px
     box-sizing: border-box
     color: #fff
@@ -123,3 +129,67 @@ input[type="checkbox"]
     padding-left: 2px
     background-color: $color-red
     border-color: $color-red
+
+.radio
+  margin: 15px 0
+
+  &>.subradio
+    height: 0
+    display: none
+    padding-left: 20px
+
+    &>.seclevel
+      margin: 15px 0
+      line-height: 16px
+
+  &>input[type="radio"]
+    display: none
+
+    & + label
+      cursor: pointer
+      position: relative
+      margin-left: 45px
+
+    & + label::before
+      content: " "
+      display: inline-block
+      width: 18px
+      height: 18px
+      border-radius: 50%
+      border: 1px solid $color-light-gray
+      font-size: 14px
+      text-align: center
+      line-height: 14px
+      position: absolute
+      left: -25px
+      box-sizing: border-box
+      color: #fff
+
+    &:checked + label::before
+      content: "●"
+      background-color: $color-red
+      border-color: $color-red
+
+    &:checked ~ .subradio
+      height: auto
+      display: block
+
+input[type="text"],
+select,
+textarea
+  width: 31%
+  height: 40px
+  border: 1px solid $color-light-gray
+  padding-left: 10px
+
+  &.-block
+    display: block
+    width: 300px
+    margin: 15px 0
+
+textarea
+  width: 100%
+  max-width: 100%
+  min-size: 100%
+  min-height: 70px
+  padding: 10px
