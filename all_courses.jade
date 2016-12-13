@@ -19,40 +19,39 @@ block page-wrap
   - var subtopics = ["Физика", "Химия", "Математика", "История искусства", "Музыка"];
   - var specialty = ["Теория музыки", "История музыки", "Исполнение музыки"];
   .page-wrap
-    .head
-      .choose-subject
-        h1 Курсы
+    .choose-subject
+      h1 Курсы
 
-        select(name="subtopic", size="1", autocomplete="off")
-          option(value="", disabled, selected) Предмет
-          for stopic in subtopics
-            option
-              = stopic
+      select(name="subtopic", size="1", autocomplete="off")
+        option(value="", disabled, selected) Предмет
+        for stopic in subtopics
+          option
+            = stopic
 
-        select(name="specialty", size="1", autocomplete="off")
-          option(value="", disabled, selected) Направление
-          for spec in specialty
-            option 
-              = spec
+      select(name="specialty", size="1", autocomplete="off")
+        option(value="", disabled, selected) Направление
+        for spec in specialty
+          option 
+            = spec
 
 
-        form
-          input(type="text" placeholder="Поиск")
-          button(type="submit").search
-            svg.loupe(role="img", title="loupe")
-                use(xlink:href="images/loupe.svg#loupe")
-          
-        .sort
-          span Сортировать по:
+      form
+        input(type="text" placeholder="Поиск")
+        button(type="submit").search
+          svg.loupe(role="img", title="loupe")
+              use(xlink:href="images/loupe.svg#loupe")
+        
+      .sort
+        span Сортировать по:
 
-          select.tinyinput
-            option Названию
-            option Дате добавления
-            option Имени лектора
-          
-          input(type="checkbox" id="contains" hidden)
-          label(for="contains") Содержит…
-    
+        select.-tiny
+          option Названию
+          option Дате добавления
+          option Имени лектора
+        
+        input(type="checkbox" id="contains" hidden)
+        label(for="contains") Содержит…
+  
     .content
       .courses-list
         // Мой компилятор Pug не может компилировать большие массивы с объектами

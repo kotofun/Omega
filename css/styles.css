@@ -86,6 +86,21 @@ h3 {
   margin-bottom: 10px;
 }
 
+hr {
+  border: none;
+  height: 1px;
+  background-color: gainsboro;
+  margin-top: 30px;
+}
+
+button {
+  cursor: pointer;
+}
+button:active {
+  text-indent: 0;
+  padding: 0;
+}
+
 .button {
   display: inline-block;
   height: 35px;
@@ -95,17 +110,19 @@ h3 {
   font-size: 14px;
   cursor: pointer;
   padding: 0 30px;
+  color: white;
 }
 .button:hover {
   filter: brightness(0.85);
 }
 .button.-red {
   background-color: #ed4e42;
-  color: white;
 }
 .button.-gray {
   background-color: #c8c8c8;
-  color: #222222;
+}
+.button.-green {
+  background-color: #44c56b;
 }
 .button.-block {
   display: block;
@@ -133,6 +150,7 @@ input[type="checkbox"] + label::before {
   text-align: center;
   line-height: 14px;
   position: absolute;
+  top: 0;
   left: -25px;
   box-sizing: border-box;
   color: white;
@@ -192,25 +210,41 @@ input[type="checkbox"]:checked + label::before {
 input[type="text"],
 select,
 textarea {
-  width: 31%;
+  display: block;
+  width: 100%;
   height: 40px;
   border: 1px solid gainsboro;
   padding-left: 10px;
-}
-input[type="text"].-block,
-select.-block,
-textarea.-block {
-  display: block;
-  width: 300px;
   margin: 15px 0;
+}
+input[type="text"].-w50p,
+select.-w50p,
+textarea.-w50p {
+  display: inline-block;
+  width: 48%;
+  margin-top: 0;
+}
+input[type="text"].-w50p:first-of-type,
+select.-w50p:first-of-type,
+textarea.-w50p:first-of-type {
+  margin-right: 3%;
+}
+
+select.-tiny {
+  width: 130px !important;
+  height: 20px !important;
+  border: none !important;
+  padding-left: 0 !important;
 }
 
 textarea {
   width: 100%;
   max-width: 100%;
-  min-size: 100%;
+  min-width: 100%;
   min-height: 70px;
   padding: 10px;
+  font-size: 12px;
+  font-family: Arial;
 }
 
 .site-header {
@@ -266,6 +300,19 @@ textarea {
 }
 .site-header > .menu > a:not(:first-child) {
   margin-left: 24px;
+}
+.site-header a.choosecover {
+  display: block;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  margin: 42px calc(50% - 60px);
+  z-index: 15;
+  color: white;
+  text-align: center;
+  padding-top: 45px;
 }
 .site-header .cover {
   width: 100%;
@@ -328,6 +375,15 @@ textarea {
 .choose-subject > select > option[disabled] {
   display: none;
 }
+.choose-subject input[type="text"],
+.choose-subject select {
+  display: inline-block;
+  width: 31%;
+  height: 40px;
+  border: 1px solid gainsboro;
+  padding-left: 10px;
+  margin-top: 0;
+}
 .choose-subject .search {
   background-color: transparent;
   width: 40px;
@@ -349,16 +405,11 @@ textarea {
 }
 .choose-subject > .sort {
   width: 100%;
-  margin-top: 25px;
   font-size: 12px;
+  margin-top: 25px;
 }
 .choose-subject > .sort > span {
   color: #666666;
-}
-.choose-subject > .sort > .tinyinput {
-  width: 130px;
-  height: 20px;
-  border: none;
 }
 
 .courses-list {
@@ -441,6 +492,25 @@ textarea {
   color: #666666;
   position: absolute;
   left: 0;
+}
+.lectures-list > li > .delete {
+  display: block;
+  border: none;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background-color: white;
+}
+.lectures-list > li > .delete::after {
+  content: "✖";
+  color: #ed4e42;
+  position: absolute;
+  width: 20px;
+  top: 0;
+  left: 0;
+  text-align: center;
 }
 .lectures-list.-tiny {
   margin-top: 0;
@@ -536,4 +606,18 @@ textarea {
 }
 .lection-text > a.-linkforward {
   margin-top: 40px;
+}
+
+.course-footer > hr {
+  margin-top: 50px;
+}
+.course-footer > .publicatebox {
+  position: relative;
+  margin-right: 30px;
+}
+.course-footer > .publicatebox > label {
+  margin-left: 25px;
+}
+.course-footer > .button {
+  margin-right: 10px;
 }

@@ -73,6 +73,18 @@ h3
   font-size: 16px
   margin-bottom: 10px
 
+hr
+  border: none
+  height: 1px
+  background-color: $color-light-gray
+  margin-top: 30px
+
+button
+  cursor: pointer
+  &:active
+    text-indent: 0
+    padding: 0
+
 .button
   display: inline-block
   height: 35px
@@ -82,17 +94,19 @@ h3
   font-size: 14px
   cursor: pointer
   padding: 0 30px
+  color: #fff
 
   &:hover
     filter: brightness(.85)
 
   &.-red
     background-color: $color-red
-    color: #fff
 
   &.-gray
     background-color: $color-gray
-    color: $color-almost-black
+
+  &.-green
+    background-color: #44C56B
 
   &.-block
     display: block
@@ -120,6 +134,7 @@ input[type="checkbox"]
     text-align: center
     line-height: 14px
     position: absolute
+    top: 0
     left: -25px
     box-sizing: border-box
     color: #fff
@@ -177,19 +192,32 @@ input[type="checkbox"]
 input[type="text"],
 select,
 textarea
-  width: 31%
+  display: block
+  width: 100%
   height: 40px
   border: 1px solid $color-light-gray
   padding-left: 10px
+  margin: 15px 0
 
-  &.-block
-    display: block
-    width: 300px
-    margin: 15px 0
+  &.-w50p
+    display: inline-block
+    width: 48%
+    margin-top: 0
+
+    &:first-of-type
+      margin-right: 3%
+
+select.-tiny
+  width: 130px !important
+  height: 20px !important
+  border: none !important
+  padding-left: 0 !important
 
 textarea
   width: 100%
   max-width: 100%
-  min-size: 100%
+  min-width: 100%
   min-height: 70px
   padding: 10px
+  font-size: 12px
+  font-family: Arial
