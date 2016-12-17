@@ -1,0 +1,84 @@
+extends index.jade
+
+block meta
+  title Астрономия. Вводный курс
+
+block cover
+  a(href="https://www.kursomir.ru").choosecover Загрузить обложку
+  img(src="images/cover.jpg")
+
+block page-wrap
+  - var subtopics = ["Физика", "Химия", "Математика", "История искусства", "Музыка"];
+  - var specialty = ["Теория музыки", "История музыки", "Исполнение музыки"];
+
+  .page-wrap
+    .head.-tiny
+
+    .sidebar
+      .course-sidebar
+        h3 Информация о курсе:
+        p.info Преподаватель:
+          input(type="text")
+        p.info Номер курса MIT:
+          input(type="text")
+        p.info Дата появления курса:
+          input(type="text")
+        p.info Уровень сложности:
+          input(type="text")
+        
+        h3 Над курсом работали:
+        select(name="role", size="1", autocomplete="off").info.-tiny
+          option Редактор
+          option Переводчик
+          option Верстальщик
+        input(type="text")
+
+        select(name="role", size="1", autocomplete="off").info.-tiny
+          option Редактор
+          option Переводчик
+          option Верстальщик
+        input(type="text")
+
+        select(name="role", size="1", autocomplete="off").info.-tiny
+          option Редактор
+          option Переводчик
+          option Верстальщик
+        input(type="text")
+        
+        a.button.-red.-block.-mt20 Прикрепить PDF
+        a.button.-gray.-block.-mt20 Прикрепить задачи
+    
+    - var lectures =  ["Астрономы и объекты их интереса", "Телескопы", "Измерение пространства и времени", "Движение и гравитация", "Планетные системы", "Малые тела", "Звезды", "Галактика", "Космология"];
+    .content
+      select(name="subtopic", size="1", autocomplete="off").-w50p
+        option(value="", disabled, selected) Предмет
+        for stopic in subtopics
+          option
+            = stopic
+
+      select(name="specialty", size="1", autocomplete="off").-w50p
+        option(value="", disabled, selected) Направление
+        for spec in specialty
+          option 
+            = spec
+      
+      input(type="text" placeholder="Название курса")
+      textarea(placeholder="Описание курса")
+
+      ul.lectures-list
+        h3 Лекции:
+        for lect in lectures
+          li 
+            a(href="https://www.kursomir.ru")= lect
+            button.delete
+      .button.-red.-mt20 Добавить лекцию
+      .clearfix
+    .clearfix
+    .course-footer
+      hr
+      span.publicatebox
+        input(type="checkbox" id="publicate" hidden)
+        label(for="publicate") Опубликовать
+      .button.-red.-mt20 Удалить
+      .button.-gray.-mt20 Отменить
+      .button.-green.-mt20 Сохранить

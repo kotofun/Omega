@@ -12,54 +12,50 @@
         </svg></a>
       <nav class="menu"><a>Курсы</a><a>Новости</a><a>О проекте</a></nav>
       <div class="clearfix"></div>
-      <div class="cover"></div>
+      <div class="cover"><img src="images/cover.jpg"/></div>
     </div>
     <div class="page-wrap">
-      <div class="head">
-        <div class="choose-subject">
-          <h1>Курсы</h1>
-          <select name="subtopic" size="1" autocomplete="off">
-            <option value="" disabled="disabled" selected="selected">Предмет</option>
-            <option>Физика
-            </option>
-            <option>Химия
-            </option>
-            <option>Математика
-            </option>
-            <option>История искусства
-            </option>
-            <option>Музыка
-            </option>
+      <div class="choose-subject">
+        <h1>Курсы</h1>
+        <select name="subtopic" size="1" autocomplete="off">
+          <option value="" disabled="disabled" selected="selected">Предмет</option>
+          <option>Физика
+          </option>
+          <option>Химия
+          </option>
+          <option>Математика
+          </option>
+          <option>История искусства
+          </option>
+          <option>Музыка
+          </option>
+        </select>
+        <select name="specialty" size="1" autocomplete="off">
+          <option value="" disabled="disabled" selected="selected">Направление</option>
+          <option>Теория музыки
+          </option>
+          <option>История музыки
+          </option>
+          <option>Исполнение музыки
+          </option>
+        </select>
+        <form>
+          <input type="text" placeholder="Поиск"/>
+          <button type="submit" class="search">
+            <svg role="img" title="loupe" class="loupe">
+              <use xlink:href="images/loupe.svg#loupe"></use>
+            </svg>
+          </button>
+        </form>
+        <div class="sort"><span>Сортировать по:</span>
+          <select class="-tiny">
+            <option>Названию</option>
+            <option>Дате добавления</option>
+            <option>Имени лектора</option>
           </select>
-          <select name="specialty" size="1" autocomplete="off">
-            <option value="" disabled="disabled" selected="selected">Направление</option>
-            <option>Теория музыки
-            </option>
-            <option>История музыки
-            </option>
-            <option>Исполнение музыки
-            </option>
-          </select>
-          <form>
-            <input type="text" placeholder="Поиск"/>
-            <button type="submit" class="search">
-              <svg role="img" title="loupe" class="loupe">
-                <use xlink:href="images/loupe.svg#loupe"></use>
-              </svg>
-            </button>
-          </form>
-          <div class="sort"><span>Сортировать по:</span>
-            <select class="tinyinput">
-              <option>Названию</option>
-              <option>Дате добавления</option>
-              <option>Имени лектора</option>
-            </select>
-            <input type="checkbox" id="contains" hidden="hidden"/>
-            <label for="contains">Содержит…</label>
-          </div>
+          <input type="checkbox" id="contains" hidden="hidden"/>
+          <label for="contains">Содержит…</label>
         </div>
-      </div>
-      <div class="sidebar">
       </div>
       <div class="content">
         <div class="courses-list">
