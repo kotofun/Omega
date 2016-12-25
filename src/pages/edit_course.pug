@@ -1,4 +1,4 @@
-extends index.jade
+extends layouts/index
 
 block meta
   title Астрономия. Вводный курс
@@ -25,7 +25,7 @@ block page-wrap
           input(type="text")
         p.info Уровень сложности:
           input(type="text")
-        
+
         h3 Над курсом работали:
         select(name="role", size="1", autocomplete="off").info.-tiny
           option Редактор
@@ -44,10 +44,10 @@ block page-wrap
           option Переводчик
           option Верстальщик
         input(type="text")
-        
+
         a.button.-red.-block.-mt20 Прикрепить PDF
         a.button.-gray.-block.-mt20 Прикрепить задачи
-    
+
     - var lectures =  ["Астрономы и объекты их интереса", "Телескопы", "Измерение пространства и времени", "Движение и гравитация", "Планетные системы", "Малые тела", "Звезды", "Галактика", "Космология"];
     .content
       select(name="subtopic", size="1", autocomplete="off").-w50p
@@ -59,16 +59,16 @@ block page-wrap
       select(name="specialty", size="1", autocomplete="off").-w50p
         option(value="", disabled, selected) Направление
         for spec in specialty
-          option 
+          option
             = spec
-      
+
       input(type="text" placeholder="Название курса")
       textarea(placeholder="Описание курса")
 
       ul.lectures-list
         h3 Лекции:
         for lect in lectures
-          li 
+          li
             a(href="https://www.kursomir.ru")= lect
             button.delete
       .button.-red.-mt20 Добавить лекцию

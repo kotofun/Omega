@@ -1,13 +1,4 @@
-extends index.jade
-
-//  
-  - var courses = [
-    {
-      lecturer: "Кевин Колтер",
-      date: 1480288644,
-      title: "Mechanics of Material Systems"
-    }
-  ];
+extends layouts/index
 
 block meta
   title Курсы
@@ -31,7 +22,7 @@ block page-wrap
       select(name="specialty", size="1", autocomplete="off")
         option(value="", disabled, selected) Направление
         for spec in specialty
-          option 
+          option
             = spec
 
 
@@ -40,7 +31,7 @@ block page-wrap
         button(type="submit").search
           svg.loupe(role="img", title="loupe")
               use(xlink:href="images/loupe.svg#loupe")
-        
+
       .sort
         span Сортировать по:
 
@@ -48,10 +39,10 @@ block page-wrap
           option Названию
           option Дате добавления
           option Имени лектора
-        
+
         input(type="checkbox" id="contains" hidden)
         label(for="contains") Содержит…
-  
+
     .content
       .courses-list
         // Мой компилятор Pug не может компилировать большие массивы с объектами
@@ -59,7 +50,7 @@ block page-wrap
 
         - for (var i=0; i<=10; i++)
           .course
-            a(href="https://www.kursomir.ru").title Mechanics of Material Systems 
+            a(href="https://www.kursomir.ru").title Mechanics of Material Systems
             a(href="https://www.kursomir.ru").lecturer Кевин Колтер
 
         button.showmore Показать еще 50
