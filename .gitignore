@@ -8,3 +8,5 @@ npm-debug.log.*
 thumbs.db
 !.gitkeep
 ._*
+**/**/._*
+**/._*
