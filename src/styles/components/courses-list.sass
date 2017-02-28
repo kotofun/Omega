@@ -1,7 +1,8 @@
 .courses-list
-  width: 100%
+  width: 580px
+  margin-bottom: 100px
 
-  >.course
+  > .course
     display: block
     width: 100%
     border-top: 1px solid $color-light-gray
@@ -10,28 +11,37 @@
     &:last-of-type
       border-bottom: 1px solid $color-light-gray
   
-    >.title
+    > .title
       color: $color-red
-      font-size: 17px
+      font-size: 16px
       display: block
+      transition: color .3s
 
-    >.title:hover
-      color: $color-dark-red
+    > .title:hover
+      color: darken($color-red, 20%)
 
-    >.lecturer
+    > .teacher
       color: $color-dark-gray
-      font-size: 15px
+      font-size: 12px
+      line-height: 15px
+      transition: color .3s
 
-    >.lecturer:hover
+    > .teacher:hover
       color: #000
 
-  >.showmore
-    width: 60%
-    height: 40px
-    background-color: $color-light-gray
+  > .showmore
+    display: block
+    text-align: center
+    width: 100%
+    padding: 15px 0
+    line-height: 17px
+    font-size: 14px
+    background: $color-mostlight-gray
     cursor: pointer
     border: none
-    margin-top: 20px
+    margin-top: 50px
+    transition: background-color .3s, color .3s
 
     &:hover
-      background-color: $color-gray
+      background-color: darken($color-mostlight-gray, 10%)
+      color: darken($color-red, 15%)

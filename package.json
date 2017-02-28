@@ -1,0 +1,21 @@
+{
+  "name": "kursomir-markup",
+  "version": "1.0.0-alpha",
+  "main": "index.js",
+  "repository": "git@github.com:kursomir/markup2.0.git",
+  "author": "Michael Pet <mixty01@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "browser-sync": "^2.18.6",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-coffee": "^2.3.3",
+    "gulp-pug": "^3.2.0",
+    "gulp-sass": "^3.1.0"
+  },
+  "devDependencies": {
+    "gulp-if": "^2.0.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-svg-symbols": "^2.0.2"
+  }
+}

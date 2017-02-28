@@ -1,0 +1,6 @@
+<% _.each(icons, function (icon) { %>$<%= icon.className %>: <%= icon.width %> <%= icon.height %>
+<% });%>
+
+=svg-size($icon)
+  width: nth($icon, 1)
+  height: nth($icon, 2)

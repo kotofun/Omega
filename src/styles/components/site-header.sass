@@ -1,33 +1,34 @@
 .site-header
-  width: 100%
-  height: 60px
-  padding: 0 10%
   background-color: #fff
-  margin-bottom: 330px
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
 
-  >a >.logo
-    height: 30px
-    width: 112px
-    margin: 15px 0
+  > .logo > .img
+    height: 36px
+    width: 140px
+    margin: 20px 0
     float: left
+    fill: $color-text
+    transition: fill .5s
 
     &:hover
       fill: $color-red
 
-  >.menu
+  > .menu
     float: right
 
-  >.menu >a
-    font-family: $font-roboto
+  > .menu > .link
     position: relative
     display: inline-block
-    padding: 0 10px
-    line-height: 60px
+    padding: 28px 10px
     font-size: 16px
     font-weight: 400
     color: #000
     text-decoration: none
     cursor: pointer
+    transition: color .3s
 
     &:after
       content: ''

@@ -2,19 +2,18 @@ html
   head
     block meta
     meta(charset="UTF8")
-    link(rel="stylesheet", href="styles/styles.css")
+    link(rel="stylesheet" href="styles/styles.css")
   body
-    .site-header
-      a(href="https://www.kursomir.ru")
-        svg.logo(role="img", title="logo")
-          use(xlink:href="images/icons.svg#logo")
-
-      nav.menu
-        a Курсы
-        a Новости
-        a О проекте
-      .clearfix
-      .cover
-        block cover
-
+    .content-wrap.-header
+      .site-header
+        a.logo(href="javascript:;")
+          svg.img(role="img" title="logo")
+            use(xlink:href="images/icons.svg#logo")
+        nav.menu
+          a.link Курсы
+          a.link Новости
+          a.link О проекте
+          a.link Хочу помочь
+        .clearfix
+    block cover
     block page-wrap

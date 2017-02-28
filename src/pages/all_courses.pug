@@ -4,55 +4,46 @@ block meta
   title Курсы
 
 block cover
-  img(src="images/cover.jpg")
+  .head-cover(style="background-image: url('../images/curiosity.png')")
 
 block page-wrap
   - var subtopics = ["Физика", "Химия", "Математика", "История искусства", "Музыка"];
   - var specialty = ["Теория музыки", "История музыки", "Исполнение музыки"];
-  .page-wrap
-    .choose-subject
-      h1 Курсы
-
-      select(name="subtopic", size="1", autocomplete="off")
-        option(value="", disabled, selected) Предмет
+  .content-wrap
+    .content-head
+      h1.title Курсы
+      select.select(name="subtopic")
+        option(value="" selected) Предмет
         for stopic in subtopics
           option
             = stopic
-
-      select(name="specialty", size="1", autocomplete="off")
-        option(value="", disabled, selected) Направление
+      select.select(name="specialty")
+        option(value="" selected) Направление
         for spec in specialty
           option
             = spec
-
-
-      form
-        input(type="text" placeholder="Поиск")
-        button(type="submit").search
-          svg.loupe(role="img", title="loupe")
-              use(xlink:href="images/loupe.svg#loupe")
-
-      .sort
-        span Сортировать по:
-
-        select.-tiny
-          option Названию
-          option Дате добавления
-          option Имени лектора
-
-        input(type="checkbox" id="contains" hidden)
-        label(for="contains") Содержит…
-
-    .content
-      .courses-list
-        // Мой компилятор Pug не может компилировать большие массивы с объектами
-        // поэтому выше он закомментирован и использован обычный цикл
-
-        - for (var i=0; i<=10; i++)
-          .course
-            a(href="https://www.kursomir.ru").title Mechanics of Material Systems
-            a(href="https://www.kursomir.ru").lecturer Кевин Колтер
-
-        button.showmore Показать еще 50
-
-    .clearfix
+      form.search
+        input.input(type="text" placeholder="Поиск")
+        button.submit(type="submit")
+          svg.icon.icon-loupe.loupe(role="img" title="loupe")
+            use(xlink:href="icons.svg#icon-loupe")
+  .content-wrap.-content
+    .page-content
+      .content
+        .sort-tools.sort
+          .type
+            span.label Сортировать по:
+            select.select.select-box.-tiny
+              option Названию
+              option Дате добавления
+              option Имени лектора
+          .contains
+            .form-field.field
+              input.checkbox(type="checkbox" id="contains")
+              label(for="contains") Содержит видео/аудио
+        .courses-list
+          - for (var i=0; i<=10; i++)
+            .course
+              a.title(href="javascript:;") Mechanics of Material Systems
+              a.teacher(href="javascript:;") Кевин Колтер
+          a.showmore(href="javascript:;") Показать еще 50
