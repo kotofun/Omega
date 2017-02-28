@@ -1,6 +1,22 @@
 .lectures-list
   margin-top: 60px
 
+  &.-tiny
+    margin-top: 0
+
+    > .title
+      margin-bottom: 15px
+
+    > .list
+      margin: 0
+
+      > .item
+        padding: 10px 0 10px 20px
+
+      > .item > .link
+        font-size: 14px
+
+
   > .title
     font:
       family: 'GothamProBold'
@@ -16,6 +32,12 @@
       width: 100%
       border-top: 1px solid $color-light-gray
       padding: 20px 0 20px 25px
+
+      &.-active > .link
+        color: $color-text
+
+        &:hover
+          color: lighten($color-text, 15%)
 
       &:before
         content: counter(item)
@@ -55,9 +77,3 @@
         top: 0
         left: 0
         text-align: center
-
-    &.-tiny
-      margin-top: 0
-
-      > .item
-        padding: 10px 0 10px 30px
