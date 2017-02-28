@@ -1,0 +1,38 @@
+.button-box
+  display: inline-block
+  border: none
+  text-align: center
+  font-size: 14px
+  cursor: pointer
+  padding: 10px 20px
+  color: #fff
+  background-color: $color-red
+  transition: background-color .3s, color .3s ease
+
+  &:hover
+    background: lighten($color-red, 10%)
+
+  &:active
+    background-color: darken($color-red, 15%)
+
+  &.-gray
+    background-color: $color-gray
+    color: $color-text
+
+    &:hover
+      background: lighten($color-gray, 10%)
+
+    &:active
+      background-color: darken($color-gray, 15%)
+
+  &.-green
+    background-color: $color-green
+
+    &:hover
+      background: lighten($color-green, 10%)
+
+    &:active
+      background-color: darken($color-green, 15%)
+
+  &.-full
+    display: block

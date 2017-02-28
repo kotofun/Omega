@@ -4,63 +4,66 @@ block meta
   title Астрономия. Вводный курс
 
 block cover
-  img(src="images/cover.jpg")
+  .head-cover(style="background-image: url('../images/cover.jpg')")
 
 block page-wrap
-  .page-wrap
-    .head
-      a(href="https://www.kursomir.ru").-linkback Астрономия
-      h1.title Астрономия. Вводный курс
-
-    .sidebar
-      .course-sidebar
-        h3 Информация о курсе:
-        p.info Преподаватель:
-          span.colorblack Эммет Браун
-        p.info Номер курса MIT:
-          span.colorblack 6,003
-        p.info Дата появления курса:
-          span.colorblack Осень 2011
-        p.info Уровень сложности:
-          span.colorblack Студент
-
-        .social-icons
-          a(href="https://www.kursomir.ru").twitter
-            svg(role="img", title="logo")
-              use(xlink:href="images/icons.svg#twitter")
-          a(href="https://www.kursomir.ru").telegram
-            svg(role="img", title="logo")
-              use(xlink:href="images/icons.svg#telegram")
-          a(href="https://www.kursomir.ru").vk
-            svg(role="img", title="logo")
-              use(xlink:href="images/icons.svg#vk")
-
-        h3 Над курсом работали:
-        p.info Редактор:
-          span.colorblack Ирина Романова
-        p.info Переводчики:
-          span.colorblack Иван Алексеев
-          span.colorblack Валерий Суханов
-          span.colorblack Ярослав Некрасов
-        p.info Верстальщик:
-          span.colorblack Александр Андреев
-
-        a.button.-red.-block.-mt20 Скачать курс в PDF
-        a.button.-gray.-block.-mt20 Задачи и решения
-
-    - var lectures = ["Астрономы и объекты их интереса", "Телескопы", "Измерение пространства и времени", "Движение и гравитация", "Планетные системы", "Малые тела", "Звезды", "Галактика", "Космология"];
-    .content
+  - var lectures = ["Астрономы и объекты их интереса", "Телескопы", "Измерение пространства и времени. И еще немного текста, совсем чуть-чуточку просто чтобы было.", "Движение и гравитация", "Планетные системы", "Малые тела", "Звезды", "Галактика", "Космология"];
+  .content-wrap
+    .content-head
+      a.simple-link(href="#").-back Астрономия
+      h1.title._unmargin Астрономия. Вводный курс
+    .content-wrap.-content
       .page-content
-        .desc
-          p Вводный курс по астрономии приводит знания о космических явлениях в стройную систему, а также знакомит слушателей с современными исследованиями и важнейшими открытиями ученых.
-          br
-          | Профессиональных астрономов в мире совсем немного — около 15 тысяч человек, объединенных Международным астрономическим союзом. Но сотни тысяч любителей с не меньшим увлечением наблюдают и изучают космические объекты. Любознательность по отношению к механизмам Вселенной, как правило, воспитывается в юном возрасте. Поэтому сегодня астрономии совершенно справедливо отводится время во многих школах и кружках. Но везде ли эти уроки достаточно эффективны?
+        aside.main-sidebar
+          section.section
+            h3.title Информация о курсе:
+            .item
+              p.label Преподаватель:
+              p.info Эммет Браун
+            .item
+              p.label Номер курса MIT:
+              p.info 6,003
+            .item
+              p.label Дата появления курса:
+              p.info Осень 2011
+            .item
+              p.label Уровень сложности:
+              p.info Студент
+          section.section.social-icons
+            a(href="https://www.kursomir.ru").twitter
+              svg(role="img" title="logo")
+                use(xlink:href="images/icons.svg#twitter")
+            a(href="https://www.kursomir.ru").telegram
+              svg(role="img" title="logo")
+                use(xlink:href="images/icons.svg#telegram")
+            a(href="https://www.kursomir.ru").vk
+              svg(role="img" title="logo")
+                use(xlink:href="images/icons.svg#vk")
+          section.section
+            h3.title Над курсом работали:
+            .item  
+              p.label Редактор:
+              p.info Ирина Романова
+            .item
+              p.label Переводчики:
+              p.info Иван Алексеев
+              p.info Валерий Суханов
+              p.info Ярослав Некрасов
+            .item  
+              p.label Верстальщик:
+              p.info Александр Андреев
+          section.section
+            a(href="javascript:;").button.-full Скачать курс в PDF
+            a(href="javascript:;").button.-gray.-full Задачи и решения
+        .content
+          p.paragraph
+            | Вводный курс по астрономии приводит знания о космических явлениях в стройную систему, а также знакомит слушателей с современными исследованиями и важнейшими открытиями ученых.
+            br
+            | Профессиональных астрономов в мире совсем немного — около 15 тысяч человек, объединенных Международным астрономическим союзом. Но сотни тысяч любителей с не меньшим увлечением наблюдают и изучают космические объекты. Любознательность по отношению к механизмам Вселенной, как правило, воспитывается в юном возрасте. Поэтому сегодня астрономии совершенно справедливо отводится время во многих школах и кружках. Но везде ли эти уроки достаточно эффективны?
 
-      ul.lectures-list
-        h3 Лекции:
-        for lect in lectures
-          li
-            a(href="https://www.kursomir.ru")= lect
-
-      .clearfix
-    .clearfix
+          .lectures-list
+            h3.title Лекции:
+            ul.list
+              for lect in lectures
+                li.item
+                  a.link(href="https://www.kursomir.ru")= lect

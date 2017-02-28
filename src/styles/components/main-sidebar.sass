@@ -1,0 +1,41 @@
+.main-sidebar
+	width: 200px
+	float: right
+	padding-top: 40px
+
+	> .section
+		margin: 45px 0
+
+		&:last-of-type
+			margin-bottom: 0
+
+		&:first-of-type
+			margin-top: 0
+
+		> .title
+			font:
+				family: 'OpenSansBold'
+				size: 16px
+				weight: bold
+			margin-bottom: 20px
+
+		> .item
+			margin-top: 13px
+
+			&:first-of-type
+				margin-top: 0
+
+		> .item > .label
+			font-size: 12px
+			line-height: 14px
+			color: $color-dark-gray
+
+		> .item > .info
+			font-size: 14px
+			margin-top: 3px
+
+		> .button
+			@extend .button-box
+
+			&:last-of-type
+				margin-top: 20px

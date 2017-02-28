@@ -1,29 +1,43 @@
 .lectures-list
-  margin-top: 50px
-  counter-reset: item
+  margin-top: 60px
 
-  >h3
-    margin-bottom: 25px
+  > .title
+    font:
+      family: 'GothamProBold'
+      size: 16px
+      weight: bold
 
-  >li
-    display: block
-    width: 100%
-    border-top: 1px solid $color-gray
-    padding: 20px 0 20px 30px
-    color: $color-red
-    position: relative
+  > .list
+    margin: 25px 0
+    counter-reset: item
 
-    &:last-of-type
-      border-bottom: 1px solid $color-light-gray
+    > .item
+      position: relative
+      width: 100%
+      border-top: 1px solid $color-light-gray
+      padding: 20px 0 20px 25px
 
-    &:before
-      content: counter(item)
-      counter-increment: item
-      color: $color-dark-gray
-      position: absolute
-      left: 0
+      &:before
+        content: counter(item)
+        counter-increment: item
+        color: $color-dark-gray
+        position: absolute
+        left: 0
+        font-size: 14px
 
-    >.delete
+      &:last-of-type
+        border-bottom: 1px solid $color-light-gray
+
+    > .item > .link
+      display: block
+      color: $color-red
+      font-size: 16px
+      transition: color .3s ease
+
+      &:hover
+        color: darken($color-red, 15%)
+
+    > .item > .delete
       display: block
       border: none
       width: 20px
@@ -33,17 +47,17 @@
       top: 20px
       background-color: #FFF
 
-    >.delete::after
-      content: "✖"
-      color: $color-red
-      position: absolute
-      width: 20px
-      top: 0
-      left: 0
-      text-align: center
+      &:after
+        content: "✖"
+        color: $color-red
+        position: absolute
+        width: 20px
+        top: 0
+        left: 0
+        text-align: center
 
-  &.-tiny
-    margin-top: 0
+    &.-tiny
+      margin-top: 0
 
-    >li
-      padding: 10px 0 10px 30px
+      > .item
+        padding: 10px 0 10px 30px

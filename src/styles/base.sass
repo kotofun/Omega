@@ -3,10 +3,10 @@
 +font-face('GothamProBold', '../fonts/GothamPro/GothaProBol', otf)
 +font-face('OpenSans', '../fonts/OpenSans/OpenSans-Regular', ttf)
 +font-face('OpenSansLight', '../fonts/OpenSans/OpenSans-Light', ttf)
-+font-face('OpenSansBold', '../fonts/OpenSans/GothamPro-Bold', ttf)
++font-face('OpenSansBold', '../fonts/OpenSans/OpenSans-Bold', ttf)
 +font-face('Roboto', '../fonts/Roboto/Roboto-Regular', ttf)
 +font-face('RobotoMedium', '../fonts/Roboto/Roboto-Medium', ttf)
-+font-face('RobotoBold', '../fonts/Roboto/GothamPro-Bold', ttf)
++font-face('RobotoBold', '../fonts/Roboto/Roboto-Bold', ttf)
 
 *
   box-sizing: border-box
@@ -16,48 +16,6 @@ body
   font-family: $font-opensans
   color: $color-text
   line-height: 20px
-
-a
-  color: $color-red
-
-  &:hover
-    color: $color-dark-red
-
-  &.-linkback,
-  &.-linkforward
-    position: relative
-    
-    &:hover::before
-      border-color: $color-dark-red
-
-  &.-linkback
-    margin-left: 15px
-
-  &.-linkforward
-    margin-right: 15px
-    float: right
-
-  &.-linkback::before,
-  &.-linkforward::after
-    content: ""
-    display: block
-    width: 7px
-    height: 7px
-    background-color: transparent
-    border: 1px solid $color-red
-    border-top: none
-    border-right: none
-    position: absolute
-
-  &.-linkback::before
-    top: 5px
-    left: -12px
-    transform: rotate(45deg)
-
-  &.-linkforward::after
-    top: 5px
-    right: -12px
-    transform: rotate(-135deg)
 
 h1,
 h2,
@@ -93,32 +51,3 @@ button
   &:active
     text-indent: 0
     padding: 0
-
-.button
-  display: inline-block
-  height: 35px
-  border: none
-  line-height: 35px
-  text-align: center
-  font-size: 14px
-  cursor: pointer
-  padding: 0 30px
-  color: #fff
-
-  &:hover
-    filter: brightness(.85)
-
-  &.-red
-    background-color: $color-red
-
-  &.-gray
-    background-color: $color-gray
-
-  &.-green
-    background-color: #44C56B
-
-  &.-block
-    display: block
-
-  &.-mt20
-    margin-top: 20px

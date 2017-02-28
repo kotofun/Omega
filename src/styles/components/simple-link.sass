@@ -1,0 +1,45 @@
+.simple-link
+  font-size: 14px
+  color: $color-red
+  transition: color .3s ease
+
+  &:hover
+    color: darken($color-red, 15%)
+
+  &.-back,
+  &.-forward
+    position: relative
+    
+    &:before,
+    &:after
+      display: block
+      width: 7px
+      height: 7px
+      background-color: transparent
+      border: 1px solid $color-red
+      border-top: none
+      border-right: none
+      position: absolute
+      transition: border-color .3s ease
+
+    &:hover:before
+      border-color: darken($color-red, 15%)
+
+  &.-back
+    margin-left: 15px
+    
+    &:before
+      content: ""
+      top: 50%
+      left: -15px
+      transform: rotate(45deg) translateY(-50%)
+
+  &.-forward
+    margin-right: 15px
+    float: right
+  
+    &:after
+      content: ""
+      top: 50%
+      right: -15px
+      transform: rotate(-135deg) translateY(-50%)
