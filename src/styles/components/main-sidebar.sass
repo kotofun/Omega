@@ -1,41 +1,50 @@
 .main-sidebar
-	width: 200px
-	float: right
-	padding-top: 40px
+  width: 200px
+  float: right
+  padding-top: 40px
 
-	> .section
-		margin: 45px 0
+  > .section
+    margin: 45px 0
 
-		&:last-of-type
-			margin-bottom: 0
+    &.-authors
+      
+      > .item > .select
+        @extend .select-box.-tiny
 
-		&:first-of-type
-			margin-top: 0
+      > .item > .field
+        @extend .form-field
+        margin-top: 3px
 
-		> .title
-			font:
-				family: 'OpenSansBold'
-				size: 16px
-				weight: bold
-			margin-bottom: 20px
+    &:last-of-type
+      margin-bottom: 0
 
-		> .item
-			margin-top: 13px
+    &:first-of-type
+      margin-top: 0
 
-			&:first-of-type
-				margin-top: 0
+    > .title
+      font:
+        family: 'OpenSansBold'
+        size: 16px
+        weight: bold
+      margin-bottom: 20px
 
-		> .item > .label
-			font-size: 12px
-			line-height: 14px
-			color: $color-dark-gray
+    > .item
+      margin-top: 13px
 
-		> .item > .info
-			font-size: 14px
-			margin-top: 3px
+      &:first-of-type
+        margin-top: 0
 
-		> .button
-			@extend .button-box
+    > .item > .label
+      font-size: 12px
+      line-height: 14px
+      color: $color-dark-gray
 
-			&:last-of-type
-				margin-top: 20px
+    > .item > .info
+      font-size: 14px
+      margin-top: 3px
+
+    > .button
+      @extend .button-box
+
+      &:last-of-type
+        margin-top: 20px

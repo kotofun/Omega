@@ -4,81 +4,99 @@ block meta
   title Астрономия. Вводный курс
 
 block cover
-  a(href="https://www.kursomir.ru").choosecover Загрузить обложку
-  img(src="images/cover.jpg")
+  .head-cover(style="background-image: url('../images/cover.jpg')")
 
 block page-wrap
-  - var subtopics = ["Физика", "Химия", "Математика", "История искусства", "Музыка"];
-  - var specialty = ["Теория музыки", "История музыки", "Исполнение музыки"];
+  - var sciences = ["Физика", "Химия", "Математика", "История искусства", "Музыка"];
+  - var directions = ["Теория музыки", "История музыки", "Исполнение музыки"];
 
-  .page-wrap
-    .head.-tiny
+  .content-wrap
+    .content-head
+      .course-head
+        .field
+          label.label Наука
+          select.select(name="science")
+            for science in sciences
+              option= science
+        .field
+          label.label Направление
+          select.select(name="direction")
+            for direction in directions
+              option= direction
+      h3.sidebar-title Информация о курсе:
+    .content-wrap.-content
+      .page-content.course-edit
+        aside.sidebar
+          section.section
+            .item
+              .form-field
+                label.label(for="teacher") Преподаватель:
+                input.input(type="text" id="teacher")
+            .item
+              .form-field
+                label.label(for="course-number") Номер курса MIT:
+                input.input(type="text" id="course-number")
+            .item
+              .form-field
+                label.label(for="creating-date") Дата появления курса:
+                input.input(type="text" id="creating-date")
+            .item
+              .form-field
+                label.label(for="level") Уровень сложности:
+                input.input(type="text" id="level")
+          section.section.-authors
+            h3.title Над курсом работали:
+            .item
+              select.select(name="role")
+                option Редактор
+                option Переводчик
+                option Верстальщик
+              .field
+                input.input(type="text")
+          section.section
+            h3.title Дополнительные материалы:
+            .item
+              .form-field
+                label.label(for="pdf") Курс в PDF
+                .file
+                  input(type="file" id="pdf")
+                  .shell
+                    svg.icon.icon-more.more(role="img" title="more")
+                      use(xlink:href="icons.svg#icon-more")
+            .item
+              .form-field
+                label.label(for="zip") Задачи и решения
+                .file
+                  input(type="file" id="zip")
+                  .loaded
+                    | задачи_и_решения.zip
+                    span.remove
 
-    .sidebar
-      .course-sidebar
-        h3 Информация о курсе:
-        p.info Преподаватель:
-          input(type="text")
-        p.info Номер курса MIT:
-          input(type="text")
-        p.info Дата появления курса:
-          input(type="text")
-        p.info Уровень сложности:
-          input(type="text")
-
-        h3 Над курсом работали:
-        select(name="role", size="1", autocomplete="off").info.-tiny
-          option Редактор
-          option Переводчик
-          option Верстальщик
-        input(type="text")
-
-        select(name="role", size="1", autocomplete="off").info.-tiny
-          option Редактор
-          option Переводчик
-          option Верстальщик
-        input(type="text")
-
-        select(name="role", size="1", autocomplete="off").info.-tiny
-          option Редактор
-          option Переводчик
-          option Верстальщик
-        input(type="text")
-
-        a.button.-red.-block.-mt20 Прикрепить PDF
-        a.button.-gray.-block.-mt20 Прикрепить задачи
-
-    - var lectures =  ["Астрономы и объекты их интереса", "Телескопы", "Измерение пространства и времени", "Движение и гравитация", "Планетные системы", "Малые тела", "Звезды", "Галактика", "Космология"];
-    .content
-      select(name="subtopic", size="1", autocomplete="off").-w50p
-        option(value="", disabled, selected) Предмет
-        for stopic in subtopics
-          option
-            = stopic
-
-      select(name="specialty", size="1", autocomplete="off").-w50p
-        option(value="", disabled, selected) Направление
-        for spec in specialty
-          option
-            = spec
-
-      input(type="text" placeholder="Название курса")
-      textarea(placeholder="Описание курса")
-
-      ul.lectures-list
-        h3 Лекции:
-        for lect in lectures
-          li
-            a(href="https://www.kursomir.ru")= lect
-            button.delete
-      .button.-red.-mt20 Добавить лекцию
-      .clearfix
-    .clearfix
-    .course-footer
-      hr
-      span.publicatebox
-        input(type="checkbox" id="publicate" hidden)
-        label(for="publicate") Опубликовать
-      .button.-red.-mt20 Удалить
-      .button.-gray.-mt20 Отменить
-      .button.-green.-mt20 Сохранить
+        - var lectures =  ["Астрономы и объекты их интереса", "Телескопы", "Измерение пространства и времени", "Движение и гравитация", "Планетные системы", "Малые тела", "Звезды", "Галактика", "Космология"];
+        .content
+          .form-field
+            label.label(for="title") Название курса
+            input.input(type="text" id="title")
+          .form-field
+            label.label(for="description") Описание курса
+            textarea.textarea(rows="7" id="description")
+          .lectures-list
+            h3.title Лекции:
+            ul.list
+              .item.-empty Пока лекций нет
+              //- for lect in lectures
+              //-   li.item
+              //-     a.link(href="javascript:;")= lect
+              //-     button.delete
+              //-     .draggable
+              //-       svg.icon.icon-more.more(role="img" title="more")
+              //-         use(xlink:href="icons.svg#icon-more")
+          a.button-box(href="javascript:;") Добавить лекцию
+        ._clearfix
+        footer.footer
+          .form-field.field
+            input.checkbox(type="checkbox" id="publish")
+            label(for="publish") Опубликовать
+          .actions
+            a.button.-medium.-dark-gray(href="javascript:;") Отменить
+            a.button.-medium.-green(href="javascript:;") Сохранить

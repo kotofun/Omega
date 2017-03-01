@@ -32,6 +32,13 @@
       width: 100%
       border-top: 1px solid $color-light-gray
       padding: 20px 0 20px 25px
+      
+      &.-empty
+        color: $color-dark-gray
+        padding-left: 0
+        
+        &:before
+          display: none
 
       &.-active > .link
         color: $color-text
@@ -62,18 +69,40 @@
     > .item > .delete
       display: block
       border: none
-      width: 20px
-      height: 20px
       position: absolute
-      right: 20px
-      top: 20px
-      background-color: #FFF
+      right: -30px
+      top: 0
+      width: 30px
+      height: 100%
+      float: right
+      background-color: transparent
 
       &:after
         content: "✖"
-        color: $color-red
+        color: transparent
         position: absolute
         width: 20px
-        top: 0
-        left: 0
+        height: 20px
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
         text-align: center
+        transition: color .5s ease
+
+      &:hover:after
+        color: darken($color-red, 20%) !important
+
+    > .item:hover > .delete:after
+      color: $color-red
+
+    > .item > .draggable
+      cursor: pointer
+      position: absolute
+      right: 20px
+      top: 50%
+      padding: 10px 0
+      transform: translateY(-50%)
+
+    > .item > .draggable > .icon
+      width: 20px
+      height: 5px
