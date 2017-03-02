@@ -3,59 +3,58 @@ extends layouts/index
 block meta
   title Астрономия. Вводный курс
 
-block cover
-  .head-cover(style="background-image: url('../images/cover.jpg')")
-
-block page-wrap
+block content
   - var sciences = ["Физика", "Химия", "Математика", "История искусства", "Музыка"];
   - var directions = ["Теория музыки", "История музыки", "Исполнение музыки"];
 
-  .content-wrap
+  .head-cover(style="background-image: url('../images/cover.jpg')")
+  .document-content
     .content-head
-      .course-head
-        .field
-          label.label Наука
-          select.select(name="science")
-            for science in sciences
-              option= science
-        .field
-          label.label Направление
-          select.select(name="direction")
-            for direction in directions
-              option= direction
-      h3.sidebar-title Информация о курсе:
-    .content-wrap.-content
-      .page-content.course-edit
-        aside.sidebar
-          section.section
-            .item
+      .wrapper
+        .course-head
+          .form-field
+            label.label Наука
+            select.select-box.-normal(name="science")
+              for science in sciences
+                option= science
+          .form-field
+            label.label Направление
+            select.select-box.-normal(name="direction")
+              for direction in directions
+                option= direction
+        h3.sidebar-title Информация о курсе:
+    .content-body.-pt20
+      .wrapper
+        aside.content-body-sidebar
+          section.single-section.-course-edit
+            .section-item
               .form-field
                 label.label(for="teacher") Преподаватель:
                 input.input(type="text" id="teacher")
-            .item
+            .section-item
               .form-field
                 label.label(for="course-number") Номер курса MIT:
                 input.input(type="text" id="course-number")
-            .item
+            .section-item
               .form-field
                 label.label(for="creating-date") Дата появления курса:
                 input.input(type="text" id="creating-date")
-            .item
+            .section-item
               .form-field
                 label.label(for="level") Уровень сложности:
                 input.input(type="text" id="level")
-          section.section.-authors
+          section.single-section.-course-edit
             h3.title Над курсом работали:
-            .item
-              select.select(name="role")
+            .section-item
+              select.select-box.-tiny(name="role")
                 option Редактор
                 option Переводчик
                 option Верстальщик
-              .field
+              .form-field.-mt3
                 input.input(type="text")
-          section.section
+          section.single-section.-course-edit
             h3.title Дополнительные материалы:
-            .item
+            .section-item
               .form-field
                 label.label(for="pdf") Курс в PDF
                 .file
@@ -63,7 +62,7 @@ block page-wrap
                   .shell
                     svg.icon.icon-more.more(role="img" title="more")
                       use(xlink:href="icons.svg#icon-more")
-            .item
+            .section-item
               .form-field
                 label.label(for="zip") Задачи и решения
                 .file
@@ -73,17 +72,17 @@ block page-wrap
                     span.remove
 
         - var lectures =  ["Астрономы и объекты их интереса", "Телескопы", "Измерение пространства и времени", "Движение и гравитация", "Планетные системы", "Малые тела", "Звезды", "Галактика", "Космология"];
-        .content
+        .content-body-main.-course-edit
           .form-field
             label.label(for="title") Название курса
             input.input(type="text" id="title")
           .form-field
             label.label(for="description") Описание курса
             textarea.textarea(rows="7" id="description")
-          .lectures-list
+          .list-box
             h3.title Лекции:
             ul.list
-              .item.-empty Пока лекций нет
+              .lecture-item.-empty Пока лекций нет
               //- for lect in lectures
               //-   li.item
               //-     a.link(href="javascript:;")= lect
@@ -93,10 +92,10 @@ block page-wrap
               //-         use(xlink:href="icons.svg#icon-more")
           a.button-box(href="javascript:;") Добавить лекцию
         ._clearfix
-        footer.footer
-          .form-field.field
+        footer.course-edit-footer
+          .form-field
             input.checkbox(type="checkbox" id="publish")
             label(for="publish") Опубликовать
           .actions
-            a.button.-medium.-dark-gray(href="javascript:;") Отменить
-            a.button.-medium.-green(href="javascript:;") Сохранить
+            a.button.-dark-gray(href="javascript:;") Отменить
+            a.button.-green(href="javascript:;") Сохранить

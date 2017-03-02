@@ -4,16 +4,14 @@ html
     meta(charset="UTF8")
     link(rel="stylesheet" href="styles/styles.css")
   body
-    .content-wrap.-header
-      .site-header
-        a.logo(href="javascript:;")
+    .site-header
+      .wrapper
+        a.logo-box(href="javascript:;")
           svg.img(role="img" title="logo")
             use(xlink:href="images/icons.svg#logo")
-        nav.menu
-          a.link Курсы
-          a.link Новости
-          a.link О проекте
-          a.link Хочу помочь
-        .clearfix
-    block cover
-    block page-wrap
+        nav.menu-nav
+          a.link(href="javascript:;") Курсы
+          a.link(href="javascript:;") Новости
+          a.link(href="javascript:;") О проекте
+          a.link(href="javascript:;") Хочу помочь
+    block content

@@ -3,47 +3,48 @@ extends layouts/index
 block meta
   title Курсы
 
-block cover
-  .head-cover(style="background-image: url('../images/curiosity.png')")
-
-block page-wrap
+block content
   - var subtopics = ["Физика", "Химия", "Математика", "История искусства", "Музыка"];
   - var specialty = ["Теория музыки", "История музыки", "Исполнение музыки"];
-  .content-wrap
+
+  .head-cover(style="background-image: url('../images/curiosity.png')")
+  .document-content
     .content-head
-      h1.title Курсы
-      select.select(name="subtopic")
-        option(value="" selected) Предмет
-        for stopic in subtopics
-          option
-            = stopic
-      select.select(name="specialty")
-        option(value="" selected) Направление
-        for spec in specialty
-          option
-            = spec
-      form.search
-        input.input(type="text" placeholder="Поиск")
-        button.submit(type="submit")
-          svg.icon.icon-loupe.loupe(role="img" title="loupe")
-            use(xlink:href="icons.svg#icon-loupe")
-  .content-wrap.-content
-    .page-content
-      .content._unpadding
-        .sort-tools.sort
-          .type
-            span.label Сортировать по:
-            select.select.select-box.-tiny
-              option Названию
-              option Дате добавления
-              option Имени лектора
-          .contains
-            .form-field.field
-              input.checkbox(type="checkbox" id="contains")
-              label(for="contains") Содержит видео/аудио
-        .courses-list
-          - for (var i=0; i<=10; i++)
-            .course
-              a.title(href="javascript:;") Mechanics of Material Systems
-              a.teacher(href="javascript:;") Кевин Колтер
-          a.showmore(href="javascript:;") Показать еще 50
+      .wrapper
+        h1.title Курсы
+        select.select-box(name="subtopic")
+          option(value="" selected) Предмет
+          for stopic in subtopics
+            option
+              = stopic
+        select.select-box(name="specialty")
+          option(value="" selected) Направление
+          for spec in specialty
+            option
+              = spec
+        form.search-box
+          input.input(type="text" placeholder="Поиск")
+          button.submit(type="submit")
+            svg.icon.icon-loupe.loupe(role="img" title="loupe")
+              use(xlink:href="icons.svg#icon-loupe")
+    .content-body
+      .wrapper
+        .content-body-main
+          .sort-tools
+            .sort-tools-type
+              span.label Сортировать по:
+              select.select
+                option Названию
+                option Дате добавления
+                option Имени лектора
+            .sort-tools-contains
+              .field
+                input.checkbox(type="checkbox" id="contains")
+                label(for="contains") Содержит видео/аудио
+          .list-box
+            .list
+              - for (var i=0; i<=10; i++)
+                li.course-item
+                  a.title(href="javascript:;") Mechanics of Material Systems
+                  a.teacher(href="javascript:;") Кевин Колтер
+            a.showmore(href="javascript:;") Показать еще 50

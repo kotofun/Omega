@@ -5,76 +5,7 @@
   left: 0
   right: 0
 
-  > .logo > .img
-    height: 36px
-    width: 140px
-    margin: 20px 0
-    float: left
-    fill: $color-text
-    transition: fill .5s
+  .wrapper
 
-    &:hover
-      fill: $color-red
-
-  > .menu
-    float: right
-
-  > .menu > .link
-    position: relative
-    display: inline-block
-    padding: 28px 10px
-    font-size: 16px
-    font-weight: 400
-    color: #000
-    text-decoration: none
-    cursor: pointer
-    transition: color .3s
-
-    &:after
-      content: ''
-      position: absolute
-      height: 3px
-      width: 100%
-      bottom: 0
-      left: 0
-      background-color: $color-red
-      transform: scale(0)
-      opacity: 0
-      will-change: opacity, transform
-      transition: opacity .3s ease, transform .3s ease
-      
-    &:hover
-      color: $color-red
-
-      &:after
-        transform: scale(1)
-        opacity: 1
-      
-    &:not(:first-child)
-      margin-left: 24px
-
-  a.choosecover
-    display: block
-    width: 120px
-    height: 120px
-    border-radius: 50%
-    position: absolute
-    background-color: rgba(0, 0, 0, .7)
-    margin: 42px calc(50% - 60px)
-    z-index: 15
-    color: #FFF
-    text-align: center
-    padding-top: 45px
-
-  .cover
-    width: 100%
-    position: absolute
-    margin-left: -10vw
-    height: 330px
-    z-index: -1
-    overflow: hidden
-
-    >.robot
-      width: 100%
-      height: 100%
-      background: no-repeat $color-red 50% 20% url("../images/robot.png")
+    > .menu-nav
+      float: right

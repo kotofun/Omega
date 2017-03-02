@@ -1,0 +1,35 @@
+.menu-nav
+
+  > .link
+    position: relative
+    display: inline-block
+    padding: 28px 10px
+    font-size: 16px
+    font-weight: 400
+    color: #000
+    text-decoration: none
+    cursor: pointer
+    transition: color .3s
+
+  > .link:after
+    content: ''
+    position: absolute
+    height: 3px
+    width: 100%
+    bottom: 0
+    left: 0
+    background-color: $color-red
+    transform: scale(0)
+    opacity: 0
+    will-change: opacity, transform
+    transition: opacity .3s ease, transform .3s ease
+    
+  > .link:hover
+    color: $color-red
+
+  > .link:hover:after
+    transform: scale(1)
+    opacity: 1
+    
+  > .link:not(:first-child)
+    margin-left: 24px

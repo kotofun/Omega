@@ -3,32 +3,31 @@ extends layouts/index
 block meta
   title Астрономы и объекты их интереса
 
-block cover
+block content
   .head-cover(style="background-image: url('../images/cover.jpg')")
-
-block page-wrap
-  .content-wrap
+  .document-content
     .content-head
-      a.simple-link(href="#").-back Астрономия. Вводный курс
-      h1.title Астрономы и объекты их интереса
-      .button Читать
-      .button.-gray Смотреть
-      .button.-gray Слушать
+      .wrapper
+        a.simple-link(href="#").-back Астрономия. Вводный курс
+        h1.title Астрономы и объекты их интереса
+        .button-box Читать
+        .button-box.-gray Смотреть
+        .button-box.-gray Слушать
 
     - var lectures =  ["Астрономы и объекты их интереса", "Телескопы", "Измерение пространства и времени", "Движение и гравитация", "Планетные системы", "Малые тела", "Звезды", "Галактика", "Космология"];
     
-    .content-wrap.-content
-      .page-content
-        aside.main-sidebar
-          .lectures-list.-tiny
+    .content-body
+      .wrapper
+        aside.content-body-sidebar
+          .list-box.-tiny
             h3.title Лекции:
             ul.list
-              li.item.-active
+              li.lecture-item.-tiny.-active
                 a.link Малые тела
               for lect in lectures
-                li.item
+                li.lecture-item.-tiny
                   a.link(href="javascript:;")= lect
-        .content
+        .content-body-main
           .lecture-text
             h2 Астрономическая наука в мире
             p Вводный курс по астрономии приводит знания о космических явлениях в стройную систему, а также знакомит слушателей с современными исследованиями и важнейшими открытиями ученых.
@@ -42,4 +41,4 @@ block page-wrap
             p Вводный курс по астрономии приводит знания о космических явлениях в стройную систему, а также знакомит слушателей с современными исследованиями и важнейшими открытиями ученых.
             p Профессиональных астрономов в мире совсем немного — около 15 тысяч человек, объединенных Международным астрономическим союзом. Но сотни тысяч любителей с не меньшим увлечением наблюдают и изучают космические объекты. Любознательность по отношению к механизмам Вселенной, как правило, воспитывается в юном возрасте. Поэтому сегодня астрономии совершенно справедливо отводится время во многих школах и кружках. Но везде ли эти уроки достаточно эффективны?
 
-          a.link.-forward(href="javascript:;") Следующая лекция
+            a.simple-link.-forward(href="javascript:;") Следующая лекция

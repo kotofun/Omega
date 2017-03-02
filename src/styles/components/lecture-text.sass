@@ -14,16 +14,16 @@
       weight: bold
     line-height: 24px
 
-    &:first-of-type
-      margin-top: 0
+  > h2:first-of-type
+    margin-top: 0
   
   > .image
     position: relative
     width: 100%
     margin: 20px 0 50px
 
-    img
-      max-width: 100%
+  > .image > img
+    max-width: 100%
   
   > .image:after
     content: attr(title)
@@ -38,3 +38,6 @@
       size: 14px
       style: italic
     color: $color-dark-gray
+
+  > .simple-link
+    margin-top: 60px

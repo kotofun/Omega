@@ -1,0 +1,26 @@
+.course-item
+  display: block
+  width: 100%
+  border-top: 1px solid $color-light-gray
+  padding: 13px 0
+
+  &:last-of-type
+    border-bottom: 1px solid $color-light-gray
+
+  > .title
+    color: $color-red
+    font-size: 16px
+    display: block
+    transition: color .3s
+
+  > .title:hover
+    color: darken($color-red, 20%)
+
+  > .teacher
+    color: $color-dark-gray
+    font-size: 12px
+    line-height: 15px
+    transition: color .3s
+
+  > .teacher:hover
+    color: #000

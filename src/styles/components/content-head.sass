@@ -1,46 +1,37 @@
 .content-head
-  background: #fff
+  background: $color-white
   padding-top: 30px !important
-  position: absolute
-  bottom: 100%
-  left: 50%
-  transform: translateX(-50%)
   z-index: 10
   +clearfix
+  
+  .wrapper
+  
+    > .title
+      font:
+        size: 30px
+        family: 'GothamProBold'
+        weight: bold
+      line-height: 36px
+      color: $color-text
+      margin-bottom: 20px
 
-  > .title
-    font:
-      size: 30px
-      family: 'GothamProBold'
-      weight: bold
-    line-height: 36px
-    color: $color-text
-    margin-bottom: 20px
+    > .select-box
+      width: 280px
+      float: left
+      margin-right: 20px
 
-  > .select
-    @extend .select-box
-    width: 280px
-    float: left
-    margin-right: 20px
+    > .search-box
+      width: 280px
+      float: left
 
-  > .search
-    @extend .search-box
-    width: 280px
-    float: left
+    > .button-box
+      width: 108px
+      margin-left: 5px
 
-  > .button
-    @extend .button-box
-    width: 108px
-    margin-left: 5px
-
-    &:first-of-type
+    > .button-box:first-of-type
       margin-left: 0
 
-  > .sidebar-title
-    float: right
-    width: 200px
-    margin-top: 33px
-    font:
-      family: 'OpenSansBold'
-      size: 16px
-      weight: bold
+    > .sidebar-title
+      float: right
+      width: 200px
+      margin-top: 33px

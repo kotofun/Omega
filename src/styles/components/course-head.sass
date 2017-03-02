@@ -2,15 +2,12 @@
   width: 580px
   float: left
   
-  > .field
-    @extend .form-field
+  > .form-field
     width: 49%
     float: left
 
-    &:last-of-type
-      float: right
+  > .form-field:last-of-type
+    float: right
 
-  > .field > .select
-    @extend .select-box.-normal
+  > .form-field > .select-box
     width: 100%
-    border-color: $color-gray
