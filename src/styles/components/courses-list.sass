@@ -1,46 +1,77 @@
 .courses-list
 
-  > .course
-    display: block
-    width: 100%
-    border-top: 1px solid $color-light-gray
-    padding: 13px 0
+.courses-list >.course
+  display: block
+  width: 100%
+  border-top: 1px solid $color-light-gray
 
-    &:last-of-type
-      border-bottom: 1px solid $color-light-gray
-  
-    > .title
-      color: $color-red
-      font-size: 16px
+  &.-square
+    border: none
+    display: inline-block
+    width: 32%
+    float: left
+    margin-bottom: calc(70vw * 0.02)
+
+    &:nth-child(3n - 1)
+      margin-right: 2%
+      margin-left: 2%
+
+    &:nth-child(3n)
+      float: right
+
+    &:hover
+      box-shadow: 0 7px 10px rgba(0, 0, 0, .35)
+
+    &:hover,
+    &:not(:hover)
+      transition: box-shadow .3s ease-in-out
+
+    > a > .img
+      width: 100%
+      height: calc(70vw * .32 * 3/4)
+
+  &:last-of-type
+    border-bottom: 1px solid $color-light-gray
+
+  > p
+    padding: 15px
+    border: 1px solid $color-light-gray
+    border-top: none
+
+    & > .title
+      color: #000
+      font-weight: bold
+      margin-top: 3px
+      font-size: 15px
       display: block
       transition: color .3s
 
-    > .title:hover
+    & > .title:hover
       color: darken($color-red, 20%)
 
-    > .teacher
+    & > .teacher
       color: $color-dark-gray
-      font-size: 12px
+      font-size: 14px
       line-height: 15px
       transition: color .3s
 
-    > .teacher:hover
-      color: #000
+    & > .teacher:hover
+      color: #000 
 
-  > .showmore
-    display: block
-    text-align: center
-    width: 100%
-    padding: 15px 0
-    line-height: 17px
-    font-size: 14px
-    background: $color-mostlight-gray
-    cursor: pointer
-    border: none
-    margin-top: 50px
-    transition: background-color .3s, color .3s
-    color: $color-red
+.courses-list > .showmore
+  display: block
+  text-align: center
+  width: 100%
+  padding: 15px 0
+  line-height: 17px
+  font-size: 14px
+  background: $color-mostlight-gray
+  cursor: pointer
+  border: none
+  margin-top: 50px
+  transition: background-color .3s, color .3s
+  color: $color-red
 
-    &:hover
-      background-color: darken($color-mostlight-gray, 10%)
-      color: darken($color-red, 15%)
+  &:hover
+    background-color: darken($color-mostlight-gray, 10%)
+    color: darken($color-red, 15%)

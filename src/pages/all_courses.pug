@@ -29,7 +29,7 @@ block page-wrap
             use(xlink:href="icons.svg#icon-loupe")
   .content-wrap.-content
     .page-content
-      .content._unpadding
+      .content.-wide._unpadding
         .sort-tools.sort
           .type
             span.label Сортировать по:
@@ -43,7 +43,11 @@ block page-wrap
               label(for="contains") Содержит видео/аудио
         .courses-list
           - for (var i=0; i<=10; i++)
-            .course
-              a.title(href="javascript:;") Mechanics of Material Systems
-              a.teacher(href="javascript:;") Кевин Колтер
+            .course.-square
+              a(href="javascript:;")
+                .img(style="background-image: url('../images/cover.jpg')")
+              p
+                a.teacher(href="javascript:;") Кевин Колтер
+                a.title(href="javascript:;") Mechanics of Material Systems
+          ._clearfix
           a.showmore(href="javascript:;") Показать еще 50
