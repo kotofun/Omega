@@ -52,12 +52,15 @@ block page-wrap
               label(for="contains") Содержит видео/аудио
                 svg.icon.icon-check.check
                   use(xlink:href="icons.svg#icon-check")
-        .courses-list.-square
+        .courses-list
           - for (var i=0; i<=10; i++)
             .course
               a(href="javascript:;")
                 .img(style="background-image: url('../images/cover.jpg')")
+              span.info Уровень: Бакалавр ⋅ Лекций: 20
               p
+                span.meta #6.776 
+                  span.season ⋅ Fall 2008
                 a.teacher(href="javascript:;") Кевин Колтер
                 a.title(href="javascript:;") Mechanics of Material Systems
           ._clearfix

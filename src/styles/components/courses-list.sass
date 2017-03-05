@@ -1,9 +1,57 @@
 .courses-list
 
-.courses-list >.course
+.courses-list > .course
   display: block
   width: 100%
-  border-top: 1px solid $color-light-gray
+  border-bottom: 1px solid $color-light-gray
+  padding: 15px 0
+  clear: both
+  height: 120px
+
+  > a > .img
+    width: 120px
+    height: 90px
+    float: left
+    margin-right: 15px
+
+  > .info
+    float: right
+    line-height: 90px
+    font-size: 14px
+    color: $color-dark-gray
+
+  > p
+
+    & > .meta
+      font-size: 14px
+      color: $color-red
+      padding-bottom: 2px
+
+    & > .meta > .season
+      color: $color-dark-gray
+
+    & > .meta,
+      display: block
+
+    & > .title
+        color: #000
+        font-weight: bold
+        margin-top: 3px
+        font-size: 15px
+        display: block
+        transition: color .3s
+
+    & > .title:hover
+      color: darken($color-red, 20%)
+
+    & > .teacher
+      color: $color-dark-gray
+      font-size: 14px
+      line-height: 15px
+      transition: color .3s
+
+    & > .teacher:hover
+      color: #000
 
 .courses-list.-square > .course
   border: none
@@ -33,27 +81,7 @@
   > p
     padding: 15px
     border: 1px solid $color-light-gray
-    border-top: none
-
-    & > .title
-      color: #000
-      font-weight: bold
-      margin-top: 3px
-      font-size: 15px
-      display: block
-      transition: color .3s
-
-    & > .title:hover
-      color: darken($color-red, 20%)
-
-    & > .teacher
-      color: $color-dark-gray
-      font-size: 14px
-      line-height: 15px
-      transition: color .3s
-
-    & > .teacher:hover
-      color: #000 
+    border-top: none 
 
 .courses-list > .showmore
   display: block
