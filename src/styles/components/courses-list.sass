@@ -1,12 +1,14 @@
 .courses-list
 
+.courses-list:not(.-square) > .course
+  clear: both
+  height: 120px
+  padding: 15px 0
+
 .courses-list > .course
   display: block
   width: 100%
   border-bottom: 1px solid $color-light-gray
-  padding: 15px 0
-  clear: both
-  height: 120px
 
   > a > .img
     width: 120px
@@ -74,9 +76,16 @@
   &:not(:hover)
     transition: box-shadow .3s ease-in-out
 
+  > .info,
+  > p > .meta
+    height: 0
+    width: 0
+    display: none
+
   > a > .img
     width: 100%
     height: calc(70vw * .32 * .75)
+    float: none
 
   > p
     padding: 15px
