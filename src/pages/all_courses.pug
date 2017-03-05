@@ -31,7 +31,16 @@ block page-wrap
     .page-content
       .content.-wide._unpadding
         .sort-tools.sort
-          .type
+          .courseview-changer
+            input(type="radio", name="courseview", id="cardview", checked="checked").card
+            label(for="cardview")
+              svg.img(role="img" title="card-menu")
+                use(xlink:href="icons.svg#icon-cardmenu")
+            input(type="radio", name="courseview", id="listview").list
+            label(for="listview")
+              svg.img(role="img" title="list-menu")
+                use(xlink:href="icons.svg#icon-listmenu")
+          .sortby
             span.label Сортировать по:
             select.select.select-box.-tiny
               option Названию
@@ -41,9 +50,11 @@ block page-wrap
             .form-field.field
               input.checkbox(type="checkbox" id="contains")
               label(for="contains") Содержит видео/аудио
-        .courses-list
+                svg.icon.icon-check.check
+                  use(xlink:href="icons.svg#icon-check")
+        .courses-list.-square
           - for (var i=0; i<=10; i++)
-            .course.-square
+            .course
               a(href="javascript:;")
                 .img(style="background-image: url('../images/cover.jpg')")
               p
