@@ -1,0 +1,35 @@
+.courseview-changer
+  float: right
+  width: 62px
+  height: 25px
+  box-size: border-box
+
+  > input
+    width: 0
+    height: 0
+    display: none
+
+  > label 
+    float: right
+    padding: 5px 7px
+    border: 1px solid $color-dark-gray
+    border-left: none
+    cursor: pointer
+
+    &:first-of-type
+      float: left
+      border: 1px solid $color-dark-gray
+      border-right: none
+
+    > svg
+      display: inline-block
+      height: 16px
+      width: 16px
+      fill: $color-dark-gray
+
+  > input:checked + label
+    background-color: $color-another-red
+    border-color: $color-another-red
+
+    > svg
+      fill: #fff

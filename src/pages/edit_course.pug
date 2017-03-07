@@ -60,7 +60,7 @@ block content
                 .file
                   input(type="file" id="pdf")
                   .shell
-                    svg.icon.icon-more.more(role="img" title="more")
+                    svg.svg-icon.-more(role="img" title="more")
                       use(xlink:href="icons.svg#icon-more")
             .section-item
               .form-field
@@ -82,20 +82,23 @@ block content
           .list-box
             h3.title Лекции:
             ul.list
-              .lecture-item.-empty Пока лекций нет
-              //- for lect in lectures
-              //-   li.item
-              //-     a.link(href="javascript:;")= lect
-              //-     button.delete
-              //-     .draggable
-              //-       svg.icon.icon-more.more(role="img" title="more")
-              //-         use(xlink:href="icons.svg#icon-more")
+              //- .lecture-item.-empty Пока лекций нет
+              for lect in lectures
+                li.lecture-item
+                  a.link(href="javascript:;")= lect
+                  button.delete
+                  .draggable
+                    svg.svg-icon.-more(role="img" title="more")
+                      use(xlink:href="icons.svg#icon-more")
           a.button-box(href="javascript:;") Добавить лекцию
         ._clearfix
         footer.course-edit-footer
           .form-field
             input.checkbox(type="checkbox" id="publish")
-            label(for="publish") Опубликовать
+            label(for="publish")
+              svg.svg-icon.-check(role="img" title="loupe")
+                  use(xlink:href="icons.svg#icon-check")
+              | Опубликовать
           .actions
             a.button.-dark-gray(href="javascript:;") Отменить
             a.button.-green(href="javascript:;") Сохранить

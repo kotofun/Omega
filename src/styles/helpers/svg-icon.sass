@@ -1,0 +1,47 @@
+.svg-icon
+  display: inline-block
+  transition: all .3s ease
+  will-change: fill, opacity
+
+  &.-loupe
+    +svg-size($loupe)
+    fill: none
+    stroke: $color-dark-gray
+    stroke-width: 2
+
+    &:hover
+      stroke: darken($color-dark-gray, 15%)
+
+  &.-arrow_down
+    +svg-size($arrow_down)
+
+  &.-check
+    +svg-size($check)
+
+  &.-logo
+    +svg-size($logo)
+
+  &.-twitter
+    +svg-size($twitter)
+
+  &.-telegram
+    +svg-size($telegram)
+
+  &.-vk
+    +svg-size($vk)
+
+  &.-check
+    +svg-size($check)
+    fill: none
+    stroke: $color-white
+    stroke-width: 2
+    stroke-linecap: round
+    stroke-linejoin: round
+
+  &.-list_view
+    +svg-size($list_view)
+    fill: $color-dark-gray
+
+  &.-card_view
+    +svg-size($card_view)
+    fill: $color-white

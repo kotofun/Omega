@@ -1,5 +1,18 @@
 .list-box
 
+  &.-card
+    
+    > .list
+      margin-left: -20px
+      +clearfix
+
+    > .list > .course-item
+      width: 280px
+      height: 280px
+      float: left
+      margin-left: 20px
+      margin-bottom: 20px
+
   &.-tiny
 
     > .title
@@ -18,20 +31,9 @@
     margin: 25px 0
     counter-reset: item
 
-  > .showmore
-    display: block
-    text-align: center
-    width: 100%
-    padding: 15px 0
-    line-height: 17px
-    font-size: 14px
-    background: $color-mostlight-gray
-    cursor: pointer
-    border: none
-    margin-top: 50px
-    transition: background-color .3s, color .3s
-    color: $color-red
+  > .list.-unmargin-top
+    margin-top: 0 !important
 
-  > .showmore:hover
-    background-color: darken($color-mostlight-gray, 10%)
-    color: darken($color-red, 15%)
+  > .showmore
+    margin-top: 50px
+    text-align: center
