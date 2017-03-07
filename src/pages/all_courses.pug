@@ -25,26 +25,55 @@ block content
         form.search-box
           input.input(type="text" placeholder="Поиск")
           button.submit(type="submit")
-            svg.icon.icon-loupe.loupe(role="img" title="loupe")
+            svg.svg-icon.-loupe(role="img" title="loupe")
               use(xlink:href="icons.svg#icon-loupe")
     .content-body
       .wrapper
-        .content-body-main
-          .sort-tools
-            .sort-tools-type
-              span.label Сортировать по:
-              select.select
-                option Названию
-                option Дате добавления
-                option Имени лектора
-            .sort-tools-contains
-              .field
-                input.checkbox(type="checkbox" id="contains")
-                label(for="contains") Содержит видео/аудио
+        .sort-tools
+          .grid-type
+            .item
+              svg.svg-icon.-card_view(role="img" title="card_view")
+                use(xlink:href="icons.svg#icon-card_view")
+            .item.-active
+              svg.svg-icon.-list_view(role="img" title="list_view")
+                use(xlink:href="icons.svg#icon-list_view")
+          .sort-tools-sortby
+            span.label Сортировать по:
+            select.select
+              option Названию
+              option Дате добавления
+              option Имени лектора
+          .sort-tools-contains
+            .field
+              input.checkbox(type="checkbox" id="contains")
+              label(for="contains")
+                svg.svg-icon.-check(role="img" title="loupe")
+                  use(xlink:href="icons.svg#icon-check")
+                | Содержит видео/аудио
+        //- Курсы в виде списка
+        //- .content-body-main
           .list-box
-            .list
+            .list.-unmargin-top
               - for (var i=0; i<=10; i++)
-                li.course-item
-                  a.title(href="javascript:;") Mechanics of Material Systems
+                if i == 0
+                  li.course-item.-unborder-top
+                    a.title(href="javascript:;") Mechanics of Material Systems
+                    a.teacher(href="javascript:;") Кевин Колтер
+                else
+                  li.course-item
+                    a.title(href="javascript:;") Mechanics of Material Systems
+                    a.teacher(href="javascript:;") Кевин Колтер
+            .showmore
+              a.button-box.-medium(href="javascript:;") Показать еще 30
+        //- Курсы в виде карточек
+        .list-box.-card
+          .list
+            - for (var i=0; i<=10; i++)
+              li.course-item.-card
+                a.image(href="javascript:;")
+                  img(src="images/cover.jpg")
+                .info
                   a.teacher(href="javascript:;") Кевин Колтер
-            a.showmore(href="javascript:;") Показать еще 50
+                  a.title(href="javascript:;") Mechanics of Material Systems
+          .showmore
+            a.button-box.-medium(href="javascript:;") Показать еще 30

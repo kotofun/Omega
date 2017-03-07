@@ -7,20 +7,65 @@
   &:last-of-type
     border-bottom: 1px solid $color-light-gray
 
-  > .title
-    color: $color-red
-    font-size: 16px
-    display: block
-    transition: color .3s
+  &.-unborder-top
+    border-top: none !important
 
-  > .title:hover
-    color: darken($color-red, 20%)
+  &.-card
+    padding: 0 !important
+    border: none !important
+    transition: transform .5s, box-shadow .5s ease
 
-  > .teacher
-    color: $color-dark-gray
-    font-size: 12px
-    line-height: 15px
-    transition: color .3s
+    &:hover
+      transform: translateY(-5px)
+      box-shadow: 0 5px 15px rgba(0,0,0,.5)
 
-  > .teacher:hover
-    color: #000
+    &:hover > .info
+      border: none
+    
+    &,
+    > .info
+      border: 1px solid $color-light-gray
+      border-top: none
+      padding: 12px 17px
+      height: 80px
+
+      > .title
+        color: $color-text
+        font:
+          family: 'GothamProBold'
+          weight: bold
+          size: 16px
+        line-height: 21px
+
+      > .title:hover
+        color: lighten($color-text, 15%)
+
+      > .teacher
+        font-size: 14px
+
+    > .image
+      &,
+      img
+        width: 100%
+        height: 200px
+  
+  &,
+  > .info
+
+    > .title
+      color: $color-red
+      font-size: 16px
+      display: block
+      transition: color .3s
+
+    > .title:hover
+      color: darken($color-red, 20%)
+
+    > .teacher
+      color: $color-dark-gray
+      font-size: 12px
+      line-height: 15px
+      transition: color .3s
+
+    > .teacher:hover
+      color: darken($color-dark-gray, 20%)
