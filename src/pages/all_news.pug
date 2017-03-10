@@ -1,0 +1,25 @@
+extends layouts/index
+
+block meta
+  title Новости
+
+block content
+
+  .head-cover(style="background-image: url('../images/cover.jpg')")
+  .document-content
+    .content-head
+      .wrapper
+        h1.title Новости
+
+    .content-body
+      .wrapper
+        aside.content-body-sidebar
+        .content-body-main
+          - for (var i=0; i<=10; i++)
+            .news-card
+              .image
+                img(src="images/cover.jpg")
+              .info
+                span.date 10.03.2017
+                a.title(href="javascript:;") Новый сайт Курсомира!                
+                span.text(href="javascript:;") Вводный курс по астрономии приводит знания о космических явлениях в стройную систему, а также знакомит слушателей с современными исследованиями.
