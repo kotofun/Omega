@@ -17,16 +17,7 @@ block content
     .content-body
       .wrapper
         aside.content-body-sidebar
-          .social-icons
-            a.link.-twitter(href="javascript:;")
-              svg.svg-icon.-twitter(role="img" title="logo")
-                use(xlink:href="icons.svg#icon-twitter")
-            a.link.-telegram(href="javascript:;")
-              svg.svg-icon.-telegram(role="img" title="logo")
-                use(xlink:href="icons.svg#icon-telegram")
-            a.link.-vk(href="javascript:;")
-              svg.svg-icon.-vk(role="img" title="logo")
-                use(xlink:href="icons.svg#icon-vk")
+          include includes/social-icons.pug
         .content-body-main
           .lecture-text
             h2 Астрономическая наука в мире
